@@ -34,6 +34,9 @@ ro.kernel.ebpf.supported=true
 camera.disable_zsl_mode=true 
 vendor.camera.aux.packagelist=com.android.camera
 
+# Charger
+ro.charger.disable_init_blank=true
+
 # Display
 persist.vendor.color.matrix=2
 debug.sf.early_phase_offset_ns=11600000
