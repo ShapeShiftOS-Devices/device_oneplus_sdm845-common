@@ -101,6 +101,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.recovery.qcom.rc \
+    init.qcom.post_boot.sh \
     ueventd.qcom.rc
 
 # Device Settings
