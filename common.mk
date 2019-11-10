@@ -116,6 +116,11 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0 \
     vendor.display.config@2.0
 
+# Display Calibration
+PRODUCT_PACKAGES += \
+    qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml \
+    qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml
+
 # Doze
 PRODUCT_PACKAGES += \
     OnePlusDoze
