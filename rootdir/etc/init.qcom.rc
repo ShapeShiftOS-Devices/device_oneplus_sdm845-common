@@ -36,13 +36,11 @@ on boot
     chown system system /sys/class/power_supply/battery/input_suspend
     chmod 0666 /sys/class/power_supply/battery/input_suspend
 
-    write /dev/cpuset/little/cpus 0-3
-
-# Audio gain permissions
-  chown system system /sys/kernel/sound_control/mic_gain
-  chown system system /sys/kernel/sound_control/earpiece_gain
-  chmod 0660 /sys/kernel/sound_control/mic_gain
-  chmod 0660 /sys/kernel/sound_control/earpiece_gain
+    # Audio gain permissions
+    chown system system /sys/kernel/sound_control/mic_gain
+    chown system system /sys/kernel/sound_control/earpiece_gain
+    chmod 0660 /sys/kernel/sound_control/mic_gain
+    chmod 0660 /sys/kernel/sound_control/earpiece_gain
 
 on charger
     write /sys/class/backlight/panel0-backlight/brightness 150
