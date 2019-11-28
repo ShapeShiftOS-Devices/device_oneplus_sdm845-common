@@ -59,4 +59,5 @@ void vendor_load_properties()
 {
     // Property Overrides
     property_override("ro.control_privapp_permissions", "log");
+    property_override_dual("vendor.audio.feature.spkr_prot.enable", "vendor.audio.feature.spkr_prot.enable", "false");
 }
