@@ -62,4 +62,6 @@ void vendor_load_properties()
 
     // Processor strings in About Phone
     property_override("ro.processor.model", "SDM845");
+
+    property_override_dual("vendor.audio.feature.spkr_prot.enable", "vendor.audio.feature.spkr_prot.enable", "false");
 }
