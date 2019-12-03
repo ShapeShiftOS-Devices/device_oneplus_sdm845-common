@@ -153,6 +153,10 @@ PRODUCT_PACKAGES += \
     vendor.nxp.nxpese@1.0:64 \
     vendor.nxp.nxpnfc@1.0:64
 
+# OnePlus-Mock
+PRODUCT_PACKAGES += oneplus-mock
+PRODUCT_BOOT_JARS += oneplus-mock
+
 # Power
 PRODUCT_PACKAGES += \
     power.qcom:64
