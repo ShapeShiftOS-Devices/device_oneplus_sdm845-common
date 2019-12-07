@@ -37,6 +37,33 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="fps"
+        android:title="@string/fps_title">
+
+        <SwitchPreference
+            android:key="fps_info"
+            android:title="@string/fps_info_title"
+            android:summary="@string/fps_info_summary"
+            android:persistent="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="gestures"
+        android:title="@string/screen_gestures_panel_title">
+
+        <Preference
+            android:key="touchscreen_gesture_settings"
+            android:persistent="false"
+            android:title="@string/touchscreen_gesture_settings_title"
+            android:summary="@string/touchscreen_gesture_settings_summary">
+            <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.touch.gestures"
+                    android:targetClass="com.android.touch.gestures.TouchscreenGestureSettings" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="slider"
         android:title="@string/notification_slider_category_title">
 
