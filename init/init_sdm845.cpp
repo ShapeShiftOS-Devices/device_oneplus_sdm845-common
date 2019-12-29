@@ -57,6 +57,15 @@ void property_override_dual(char const system_prop[], char const vendor_prop[],
 
 void vendor_load_properties()
 {
+
+    // Common dalvik heap config
+    property_override_dual("dalvik.vm.heapstartsize", "dalvik.vm.heapstartsize", "16m");
+    property_override_dual("dalvik.vm.heapgrowthlimit", "dalvik.vm.heapgrowthlimit", "256m");
+    property_override_dual("dalvik.vm.heapsize", "dalvik.vm.heapsize", "512m");
+    property_override_dual("dalvik.vm.heaptargetutilization", "dalvik.vm.heaptargetutilization", "0.5");
+    property_override_dual("dalvik.vm.heapminfree", "dalvik.vm.heapminfree", "8m");
+    property_override_dual("dalvik.vm.heapmaxfree", "dalvik.vm.heapmaxfree", "32m");
+
     // Property Overrides
     property_override("ro.control_privapp_permissions", "log");
 
