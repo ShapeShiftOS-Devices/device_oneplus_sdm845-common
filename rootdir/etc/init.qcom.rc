@@ -6,6 +6,9 @@ on post-fs
     chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-03/c440000.qcom,spmi:qcom,pmi8998@3:qcom,haptics@c000/leds/vibrator/vmax_mv_call
     chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-03/c440000.qcom,spmi:qcom,pmi8998@3:qcom,haptics@c000/leds/vibrator/vmax_mv_strong
 
+    # Freezer setup
+    write /dev/freezer/frozen/freezer.killable 1
+
 on boot
     # Fingerprint
     chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
