@@ -1,3 +1,7 @@
+on post-fs
+    # Freezer setup
+    write /dev/freezer/frozen/freezer.killable 1
+
 on boot
     # Fingerprint
     chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
