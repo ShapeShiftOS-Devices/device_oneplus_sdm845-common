@@ -14,6 +14,12 @@
 # limitations under the License.
 #
 
+# ADB on boot
+persist.service.adb.enable=1 \
+persist.service.debuggable=1 \
+persist.sys.usb.config=mtp,adb \
+ro.adb.secure=0
+
 # ART
 dalvik.vm.dex2oat-filter=speed 
 dalvik.vm.image-dex2oat-filter=speed
