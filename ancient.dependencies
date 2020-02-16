@@ -14,6 +14,10 @@
     "target_path" : "vendor/google/camera"
   },
   {
+    "repository"  : "vendor_oneplus_camera",
+    "target_path" : "vendor/oneplus/camera"
+  },
+  {
     "repository"  : "packages_apps_PixelLiveWallpaper",
     "target_path" : "packages/apps/PixelLiveWallpaper",
     "branch"      : "ten",

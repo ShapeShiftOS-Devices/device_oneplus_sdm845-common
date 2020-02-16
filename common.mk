@@ -23,6 +23,9 @@ $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 #Inherit packages from vendor/google/camera
 $(call inherit-product, vendor/google/camera/config.mk)
 
+# Inherit packages from vendor/oneplus/camera
+$(call inherit-product, vendor/oneplus/camera/config.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -87,9 +90,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
-# Camera
+# Camera HIDL
 PRODUCT_PACKAGES += \
-    Snap
+    vendor.oneplus.camera.CameraHIDL@1.0 \
+    vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper \
+    vendor.oneplus.camera.CameraHIDL-V1.0-java
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -155,7 +160,8 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    device/oneplus/common
 
 # Telephony
 PRODUCT_PACKAGES += \
