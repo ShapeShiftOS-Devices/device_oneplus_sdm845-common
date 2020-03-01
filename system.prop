@@ -33,6 +33,7 @@ ro.config.vc_call_vol_steps=7
 camera.disable_zsl_mode=true 
 persist.camera.privapp.list=com.oneplus.camera 
 persist.vendor.camera.privapp.list=com.oneplus.camera
+vendor.camera.aux.packagelist=com.android.camera,com.oneplus.camera
 
 # Display
 debug.gralloc.gfx_ubwc_disable=0 
