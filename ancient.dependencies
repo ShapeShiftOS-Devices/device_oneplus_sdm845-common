@@ -1,6 +1,6 @@
 [
   {
-    "repository"  : "AOSiP-Devices/kernel_oneplus_sdm845",
+    "repository"  : "kernel_oneplus_sdm845",
     "target_path" : "kernel/oneplus/sdm845",
     "branch"      : "ten"
   },
@@ -14,10 +14,5 @@
     "target_path" : "packages/apps/PixelLiveWallpaper",
     "branch"      : "ten",
     "remote"      : "pixel-gitlab"
-  },
-  {
-    "repository"  : "yashsonawane/vendor_interfaces",
-    "target_path" : "vendor/interfaces",
-    "branch"      : "ten"
   }
 ]
