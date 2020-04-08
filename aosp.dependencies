@@ -1,6 +1,6 @@
 [
   {
-    "repository"  : "kernel_oneplus_sdm845",
+    "repository"  : "AOSiP-Devices/kernel_oneplus_sdm845",
     "target_path" : "kernel/oneplus/sdm845",
     "branch"      : "ten"
   },
