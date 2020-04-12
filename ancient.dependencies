@@ -10,6 +10,10 @@
     "branch"      : "ten"
   },
   {
+    "repository"  : "vendor_google_camera",
+    "target_path" : "vendor/google/camera"
+  },
+  {
     "repository"  : "packages_apps_PixelLiveWallpaper",
     "target_path" : "packages/apps/PixelLiveWallpaper",
     "branch"      : "ten",
