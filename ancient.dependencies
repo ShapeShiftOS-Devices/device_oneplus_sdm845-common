@@ -5,17 +5,19 @@
     "branch"      : "ten"
   },
   {
-    "repository"  : "yashsonawane/proprietary_vendor_oneplus",
+    "repository"  : "AshutoshSundresh/vendor_oneplus",
     "target_path" : "vendor/oneplus",
     "branch"      : "ten"
   },
   {
     "repository"  : "vendor_google_camera",
     "target_path" : "vendor/google/camera"
+    "branch"      : "ten"
   },
   {
     "repository"  : "vendor_oneplus_camera",
     "target_path" : "vendor/oneplus/camera"
+    "branch"      : "ten"    
   },
   {
     "repository"  : "packages_apps_PixelLiveWallpaper",
