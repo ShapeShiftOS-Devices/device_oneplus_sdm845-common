@@ -40,6 +40,7 @@ import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.Vibrator;
+import android.os.VibrationEffect;
 import android.provider.Settings;
 import android.util.Log;
 import android.util.SparseIntArray;
@@ -173,10 +174,10 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private void doHapticFeedback() {
-        if (mVibrator == null) {
-            return;
+        if (mVibrator != null && mVibrator.hasVibrator()) {
+            mVibrator.vibrate(VibrationEffect.createOneShot(50,
+                    VibrationEffect.DEFAULT_AMPLITUDE));
         }
-	mVibrator.vibrate(50);
     }
 
     public void handleNavbarToggle(boolean enabled) {
