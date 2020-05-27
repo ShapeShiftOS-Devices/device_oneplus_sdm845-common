@@ -95,6 +95,9 @@
             </intent-filter>
         </service>
 
+        <!-- Auto HBM service -->
+        <service android:name="org.lineageos.device.DeviceSettings.AutoHBMService" />
+
         <!-- DC-Dimming tile -->
         <service
             android:name="org.lineageos.device.DeviceSettings.DCModeTileService"
