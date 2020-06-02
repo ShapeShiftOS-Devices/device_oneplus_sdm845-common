@@ -20,9 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 
-#Inherit packages from vendor/google/camera
-$(call inherit-product, vendor/google/camera/config.mk)
-
 # Inherit packages from vendor/oneplus/camera
 $(call inherit-product, vendor/oneplus/camera/config.mk)
 
@@ -197,10 +194,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-
-# Wallpapers
-PRODUCT_PACKAGES += \
-    PixelLiveWallpaperPrebuilt
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
