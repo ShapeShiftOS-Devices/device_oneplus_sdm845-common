@@ -1,0 +1,19 @@
+type oneplusmods_app, domain;
+
+app_domain(oneplusmods_app)
+
+# Access standard system services
+allow oneplusmods_app app_api_service:service_manager find;
+
+# Allow reading and writing shared prefs
+allow oneplusmods_app system_app_data_file:dir create_dir_perms;
+allow oneplusmods_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+# Allow binder communication with gpuservice
+binder_call(oneplusmods_app, gpuservice)
+
+# Allow DeviceSettings to read and write to cgroup
+allow oneplusmods_app cgroup:file rw_file_perms;
+
+# Allow DeviceSettings to write to sysfs_thermal
+allow oneplusmods_app sysfs_thermal:file w_file_perms;
