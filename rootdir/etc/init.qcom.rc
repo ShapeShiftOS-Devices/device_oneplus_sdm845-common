@@ -21,12 +21,6 @@ on boot
     chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
     chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
-    # OOS Camera
-    mkdir /data/misc/aosp 0770 cameraserver audio
-    write /data/misc/aosp/client_package_name 0
-    chown cameraserver audio /data/misc/aosp/client_package_name
-    chmod 0644 /data/misc/aosp/client_package_name
-
 on charger
     write /sys/class/backlight/panel0-backlight/brightness 150
 

@@ -20,9 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 
-# Inherit packages from vendor/oneplus/camera
-$(call inherit-product, vendor/oneplus/camera/config.mk)
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -87,11 +84,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
-# Camera HIDL
+# Camera
 PRODUCT_PACKAGES += \
-    vendor.oneplus.camera.CameraHIDL@1.0 \
-    vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper \
-    vendor.oneplus.camera.CameraHIDL-V1.0-java
+    Snap
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -166,8 +161,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    device/oneplus/common
+    $(LOCAL_PATH)
 
 # Telephony
 PRODUCT_PACKAGES += \
