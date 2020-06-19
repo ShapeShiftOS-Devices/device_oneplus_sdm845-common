@@ -63,10 +63,12 @@
     <string name="quick_settings_log_tile_dialog_title">Options</string>
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
 
-    <!-- FPS info -->
-    <string name="fps_title">Measured FPS</string>
+    <!-- Advanced info -->
+    <string name="fps_title">Advanced</string>
     <string name="fps_info_title">FPS overlay</string>
     <string name="fps_info_summary">Show overlay with with current frames per second</string>
+    <string name="otg_switch_summary">Enable/Disable USB-OTG support</string>
+    <string name="otg_switch_title">USB-OTG support</string>
 
     <!-- Thermal profiles -->
     <string name="thermal_title">Thermal profiles</string>
