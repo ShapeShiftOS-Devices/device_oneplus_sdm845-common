@@ -59,4 +59,7 @@ void vendor_load_properties()
 {
     // Property Overrides
     property_override("ro.control_privapp_permissions", "log");
+
+    // Processor strings in About Phone
+    property_override("ro.processor.model", "SDM845");
 }
