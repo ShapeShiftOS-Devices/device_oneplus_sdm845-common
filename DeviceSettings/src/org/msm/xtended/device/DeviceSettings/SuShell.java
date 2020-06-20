@@ -26,7 +26,7 @@ public class SuShell {
 
     public static ArrayList<String> runWithSuCheck(String... commands) throws SuDeniedException {
         String suTestScript = "#!/system/bin/sh\necho ";
-        String suTestScriptValid = "crDroidSuPermsOk";
+        String suTestScriptValid = "PartsSuPermsOk";
 
         String[] commandsWithCheck = new String[commands.length+1];
         commandsWithCheck[0] = suTestScript + suTestScriptValid;

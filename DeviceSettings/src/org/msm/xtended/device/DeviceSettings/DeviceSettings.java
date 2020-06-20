@@ -24,6 +24,7 @@ import android.content.res.Resources;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SELinux;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.MenuItem;
@@ -48,6 +49,9 @@ import androidx.preference.TwoStatePreference;
 import org.msm.xtended.device.DeviceSettings.FileUtils;
 import org.msm.xtended.device.DeviceSettings.speaker.ClearSpeakerActivity;
 import org.msm.xtended.device.DeviceSettings.preferences.CustomSeekBarPreference;
+import org.msm.xtended.device.DeviceSettings.R;
+import org.msm.xtended.device.DeviceSettings.SuShell;
+import org.msm.xtended.device.DeviceSettings.SuTask;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -76,6 +80,11 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
     private VibratorNotifStrengthPreference mVibratorNotifStrength;
 
+
+    private static final String SELINUX_CATEGORY = "selinux";
+    private static final String PREF_SELINUX_MODE = "selinux_mode";
+    private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
+
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
     private static TwoStatePreference mDCModeSwitch;
@@ -87,6 +96,8 @@ public class DeviceSettings extends PreferenceFragment
     private CustomSeekBarPreference mMicrophoneGain;
     private CustomSeekBarPreference mEarpieceGain;
     private CustomSeekBarPreference mSpeakerGain;
+    private SwitchPreference mSelinuxMode;
+    private SwitchPreference mSelinuxPersistence;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -158,6 +169,21 @@ public class DeviceSettings extends PreferenceFragment
         mSpeakerGain = (CustomSeekBarPreference) findPreference(PREF_SPEAKER_GAIN);
         mSpeakerGain.setOnPreferenceChangeListener(this);
 
+        // SELinux
+        boolean isRooted = SuShell.detectValidSuInPath();
+        Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
+        mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
+        mSelinuxMode.setChecked(SELinux.isSELinuxEnforced());
+        mSelinuxMode.setOnPreferenceChangeListener(this);
+        mSelinuxMode.setEnabled(isRooted);
+
+        mSelinuxPersistence =
+        (SwitchPreference) findPreference(PREF_SELINUX_PERSISTENCE);
+        mSelinuxPersistence.setOnPreferenceChangeListener(this);
+        mSelinuxPersistence.setChecked(getContext()
+        .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
+        .contains(PREF_SELINUX_MODE));
+        mSelinuxPersistence.setEnabled(isRooted);
     }
 
     @Override
@@ -181,6 +207,12 @@ public class DeviceSettings extends PreferenceFragment
             FileUtils.setValue(EARPIECE_GAIN_PATH, newValue + " " + newValue);       
         } else if (preference == mSpeakerGain) {    
             FileUtils.setValue(SPEAKER_GAIN_PATH, newValue + " " + newValue);       
+        } else if (preference == mSelinuxMode) {
+            boolean enabled = (Boolean) newValue;
+            new SwitchSelinuxTask(getActivity()).execute(enabled);
+            setSelinuxEnabled(enabled, mSelinuxPersistence.isChecked());
+        } else if (preference == mSelinuxPersistence) {
+            setSelinuxEnabled(mSelinuxMode.isChecked(), (Boolean) newValue);
         } else {
             Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
         }
@@ -201,5 +233,43 @@ public class DeviceSettings extends PreferenceFragment
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setSelinuxEnabled(boolean status, boolean persistent) {
+      SharedPreferences.Editor editor = getContext()
+          .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE).edit();
+      if (persistent) {
+        editor.putBoolean(PREF_SELINUX_MODE, status);
+      } else {
+        editor.remove(PREF_SELINUX_MODE);
+      }
+      editor.apply();
+      mSelinuxMode.setChecked(status);
+    }
+
+    private class SwitchSelinuxTask extends SuTask<Boolean> {
+      public SwitchSelinuxTask(Context context) {
+        super(context);
+      }
+      @Override
+      protected void sudoInBackground(Boolean... params) throws SuShell.SuDeniedException {
+        if (params.length != 1) {
+          return;
+        }
+        if (params[0]) {
+          SuShell.runWithSuCheck("setenforce 1");
+        } else {
+          SuShell.runWithSuCheck("setenforce 0");
+        }
+      }
+
+      @Override
+      protected void onPostExecute(Boolean result) {
+        super.onPostExecute(result);
+        if (!result) {
+          // Did not work, so restore actual value
+          setSelinuxEnabled(SELinux.isSELinuxEnforced(), mSelinuxPersistence.isChecked());
+        }
+      }
     }
 }
