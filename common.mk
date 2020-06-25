@@ -201,6 +201,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+    
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true    
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
