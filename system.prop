@@ -86,8 +86,5 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 # Vendor
 ro.vendor.qti.va_aosp.support=1
 
-# USB OTG
-persist.sys.oem.otg_support=true
-
 # Zygote preforking
 persist.device_config.runtime_native.usap_pool_enabled=true

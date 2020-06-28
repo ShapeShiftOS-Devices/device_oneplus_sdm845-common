@@ -47,8 +47,6 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_WIDE_SWITCH, false);
         restore(WideModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FPS_INFO, false);
-        restore(UsbOtgSwitch.getFile(), enabled);
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_OTG_SWITCH, false);
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
        }
