@@ -66,11 +66,6 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
 
         Resources res = getResources();
         Window win = getActivity().getWindow();
@@ -79,8 +74,12 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
         win.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         win.setNavigationBarColor(res.getColor(R.color.primary_color));
         win.setNavigationBarDividerColor(res.getColor(R.color.primary_color));
+    }
 
-        return inflater.inflate(R.layout.panel_modes, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+         return inflater.inflate(R.layout.panel_modes, container, false);
     }
 
     @Override
