@@ -29,6 +29,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -69,6 +71,15 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+
+        Resources res = getResources();
+        Window win = getActivity().getWindow();
+
+        win.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        win.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        win.setNavigationBarColor(res.getColor(R.color.primary_color));
+        win.setNavigationBarDividerColor(res.getColor(R.color.primary_color));
+
         return inflater.inflate(R.layout.panel_modes, container, false);
     }
 

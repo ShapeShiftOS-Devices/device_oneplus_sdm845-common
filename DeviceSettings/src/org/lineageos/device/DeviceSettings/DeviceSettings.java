@@ -31,6 +31,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.view.Window;
+import android.view.WindowManager;
 import android.util.Log;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
@@ -76,6 +78,15 @@ public class DeviceSettings extends PreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.main);
+
+        Resources res = getResources();
+        Window win = getActivity().getWindow();
+
+        win.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        win.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        win.setNavigationBarColor(res.getColor(R.color.primary_color));
+        win.setNavigationBarDividerColor(res.getColor(R.color.primary_color));
+
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getContext());
