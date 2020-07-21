@@ -34,7 +34,8 @@
             android:summary="@string/custom_doze_settings_summary">
             <intent
                     android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.lineageos.settings.doze" />
+                    android:targetPackage="org.lineageos.settings.doze" 
+                    android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity"/>
         </Preference>
 
         <SwitchPreference
