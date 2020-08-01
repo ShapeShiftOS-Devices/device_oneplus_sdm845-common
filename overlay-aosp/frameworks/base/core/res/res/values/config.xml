@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds.  Do not translate. -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Sets the paths that are needed for SystemInfo-->
+    <string name="config_cpu_temp_path" translatable="false">/sys/class/thermal/thermal_zone0/temp</string>
+    <string name="config_battery_temp_path" translatable="false">/sys/class/power_supply/battery/temp</string>
+    <string name="config_gpu_clock_path" translatable="false">/sys/kernel/gpu/gpu_clock</string>
+    <string name="config_gpu_busy_path" translatable="false">/sys/kernel/gpu/gpu_busy</string>
+    <string name="config_battery_level_path" translatable="false">/sys/class/power_supply/bms/charge_full</string>
+    
+    <!-- Target DeviceSettings -->
+    <string name="config_device_parts_package_name" translatable="false">org.lineageos.device.DeviceSettings</string>
+    <string name="config_device_parts_package_activity" translatable="false">org.lineageos.device.DeviceSettings.DeviceSettingsActivity</string>
+
+    <!-- FPSInfoService Fps file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/sde-crtc-0/measured_fps</string>
+
+</resources>
