@@ -22,8 +22,8 @@
             android:summary="@string/panel_category_summary"
             android:persistent="false" >
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.lineageos.device.DeviceSettings"
-                    android:targetClass="org.lineageos.device.DeviceSettings.PanelSettingsActivity" />
+                    android:targetPackage="org.msm.xtended.device.DeviceSettings"
+                    android:targetClass="org.msm.xtended.device.DeviceSettings.PanelSettingsActivity" />
         </Preference>
 
         <Preference
@@ -34,8 +34,8 @@
             android:summary="@string/custom_doze_settings_summary">
             <intent
                     android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.lineageos.settings.doze" 
-                    android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity"/>
+                    android:targetPackage="org.msm.xtended.settings.doze" 
+                    android:targetClass="org.msm.xtended.settings.doze.DozeSettingsActivity"/>
         </Preference>
 
         <SwitchPreference
@@ -56,7 +56,7 @@
             android:summary="@string/auto_hbm_summary"
             android:title="@string/auto_hbm_title" />
 
-        <org.lineageos.device.DeviceSettings.AutoHBMThresholdPreference
+        <org.msm.xtended.device.DeviceSettings.AutoHBMThresholdPreference
             android:key="auto_hbm_threshold"
             android:title="@string/auto_hbm_threshold_title"
             android:summary="@string/auto_hbm_threshold_summary" />
@@ -126,19 +126,19 @@
 
     <PreferenceCategory
         android:title="@string/category_vibrator">
-        <org.lineageos.device.DeviceSettings.VibratorStrengthPreference
+        <org.msm.xtended.device.DeviceSettings.VibratorStrengthPreference
             android:key="vib_strength"
             android:icon="@drawable/ic_vibration_icon"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
 
-        <org.lineageos.device.DeviceSettings.VibratorCallStrengthPreference
+        <org.msm.xtended.device.DeviceSettings.VibratorCallStrengthPreference
             android:key="vib_call_strength"
             android:icon="@drawable/ic_vibration_icon"
             android:title="@string/vib_call_strength_title_head"
             android:summary="@string/vib_call_strength_summary_head" />
 
-        <org.lineageos.device.DeviceSettings.VibratorNotifStrengthPreference
+        <org.msm.xtended.device.DeviceSettings.VibratorNotifStrengthPreference
             android:key="vib_notif_strength"
             android:icon="@drawable/ic_vibration_icon"
             android:title="@string/vib_notif_strength_title_head"

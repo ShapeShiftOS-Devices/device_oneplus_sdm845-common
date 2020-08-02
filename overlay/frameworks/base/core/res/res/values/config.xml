@@ -362,7 +362,7 @@
 
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
-        <item>org.lineageos.device.DeviceSettings.KeyHandler</item>
+        <item>org.msm.xtended.device.DeviceSettings.KeyHandler</item>
         <item>com.android.touch.gestures.KeyHandler</item>
     </string-array>
 
@@ -385,7 +385,7 @@
     <bool name="config_cleanupUnusedFingerprints">false</bool>
 
     <!-- Whether key handler sends intent when changing slider position -->
-    <string name="config_alertSliderIntent">org.lineageos.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
+    <string name="config_alertSliderIntent">org.msm.xtended.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
 
     <!-- If true, the display will be shifted around in ambient mode. -->
     <bool name="config_enableBurnInProtection">true</bool>
