@@ -21,6 +21,10 @@
     <string name="config_gpu_clock_path" translatable="false">/sys/kernel/gpu/gpu_clock</string>
     <string name="config_gpu_busy_path" translatable="false">/sys/kernel/gpu/gpu_busy</string>
     <string name="config_battery_level_path" translatable="false">/sys/class/power_supply/bms/charge_full</string>
+
+    <!-- Xtended specific overlays -->
+    <!-- The CPU temperature sensor path, defaults to empty -->
+    <string name="config_cpuTempSensor" translatable="false">/sys/class/thermal/thermal_zone0/temp</string>
     
     <!-- Target DeviceSettings -->
     <string name="config_device_parts_package_name" translatable="false">org.msm.xtended.device.DeviceSettings</string>
@@ -28,5 +32,64 @@
 
     <!-- FPSInfoService Fps file path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/sde-crtc-0/measured_fps</string>
+
+    <!-- Whether device supports an alt. ambient display -->
+    <bool name="config_alt_ambient_display">false</bool>
+
+    <!-- Whether the always on display mode is available. -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!-- Control whether the always on display mode is enabled by default. This value will be used
+     during initialization when the setting is still null. -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
+    <!-- Whether device ignores the RSSNR signal implementation -->
+    <bool name="config_ignoreRssnrSignalLevel">true</bool>
+
+    <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
+    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
+
+    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
+    <bool name="config_cleanupUnusedFingerprints">false</bool>
+
+    <!-- Whether key handler sends intent when changing slider position -->
+    <string name="config_alertSliderIntent">org.msm.xtended.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
+
+    <!-- If true, the display will be shifted around in ambient mode. -->
+    <bool name="config_enableBurnInProtection">true</bool>
+
+    <!-- Whether device has a physical display cutout -->
+    <bool name="config_physicalDisplayCutout">true</bool>
+     
+     <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>    
+
+    <!-- Smart charge sysfs node and value for suspend/resume charging-->
+    <bool name="config_SmartChargingAvailable">true</bool>
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_SmartChargingSuspendValue" translatable="false">1</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+
+    <!-- Whether device has physical tri state switch -->
+    <bool name="config_hasAlertSlider">true</bool>
+
+    <!-- The location of the devices physical tri state switch
+         0: Left side
+         1: Right side -->  
+    <integer name="config_alertSliderLocation">1</integer>
+     
+    <!-- Whether device has dash charging support -->
+    <bool name="config_hasDashCharger">true</bool>
+
+    <!-- System info -->
+    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone0/temp</string>
+    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
+    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
+    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
+    <integer name="config_sysCPUTempMultiplier">1000</integer>
+    <integer name="config_sysBatteryTempMultiplier">10</integer>
+
+    <!-- Whether device has screen with higher aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
 </resources>
