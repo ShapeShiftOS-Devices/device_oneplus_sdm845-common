@@ -19,7 +19,9 @@
     <bool name="config_supportSmartCharging">true</bool>
 
     <!-- Battery Health -->
-    <string name="config_batCurCap">/sys/class/power_supply/bms/charge_full</string>
-    <string name="config_batChargeCycle">/sys/class/power_supply/bms/cycle_count</string>
+    <bool name="config_supportBatteryHealth">false</bool>
+
+    <!-- Ultra Power Saving -->
+    <bool name="config_supportUltraPowerSaving">false</bool>
 
 </resources>
