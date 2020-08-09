@@ -67,7 +67,7 @@
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
 
     <!-- FPS info -->
-    <string name="fps_title">Measured FPS</string>
+    <string name="misc_title">Miscellaneous</string>
     <string name="fps_info_title">FPS overlay</string>
     <string name="fps_info_summary">Show overlay with with current frames per second</string>
 

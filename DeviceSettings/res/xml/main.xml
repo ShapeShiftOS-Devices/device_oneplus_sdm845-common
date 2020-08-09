@@ -26,18 +26,6 @@
                     android:targetClass="org.msm.xtended.device.DeviceSettings.PanelSettingsActivity" />
         </Preference>
 
-        <Preference
-            android:key="doze"
-            android:icon="@drawable/ic_doze"
-            android:persistent="false"
-            android:title="@string/custom_doze_settings_title"
-            android:summary="@string/custom_doze_settings_summary">
-            <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.msm.xtended.settings.doze" 
-                    android:targetClass="org.msm.xtended.settings.doze.DozeSettingsActivity"/>
-        </Preference>
-
         <SwitchPreference
             android:key="dc"
             android:icon="@drawable/ic_dc_mode_icon"
@@ -65,7 +53,7 @@
 
     <PreferenceCategory
         android:key="fps"
-        android:title="@string/fps_title">
+        android:title="@string/misc_title">
 
         <SwitchPreference
             android:key="fps_info"
@@ -73,11 +61,18 @@
             android:title="@string/fps_info_title"
             android:summary="@string/fps_info_summary"
             android:persistent="true" />
-    </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="gestures"
-        android:title="@string/screen_gestures_panel_title">
+        <Preference
+            android:key="doze"
+            android:icon="@drawable/ic_doze"
+            android:persistent="false"
+            android:title="@string/custom_doze_settings_title"
+            android:summary="@string/custom_doze_settings_summary">
+            <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.msm.xtended.settings.doze" 
+                    android:targetClass="org.msm.xtended.settings.doze.DozeSettingsActivity"/>
+        </Preference>
 
         <Preference
             android:key="touchscreen_gesture_settings"
@@ -90,6 +85,7 @@
                     android:targetPackage="com.android.touch.gestures"
                     android:targetClass="com.android.touch.gestures.TouchscreenGestureSettings" />
         </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
