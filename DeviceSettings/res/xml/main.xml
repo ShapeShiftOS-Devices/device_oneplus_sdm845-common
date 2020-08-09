@@ -86,6 +86,16 @@
                     android:targetClass="com.android.touch.gestures.TouchscreenGestureSettings" />
         </Preference>
 
+        <Preference
+            android:key="clear_speaker_settings" 
+            android:icon="@drawable/ic_speaker_cleaner_icon"
+            android:title="@string/clear_speaker_title" >
+            <intent 
+                android:action="android.intent.action.MAIN" 
+                android:targetClass="org.msm.xtended.device.DeviceSettings.speaker.ClearSpeakerActivity"
+                android:targetPackage="org.msm.xtended.device.DeviceSettings.speaker" />
+        </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
