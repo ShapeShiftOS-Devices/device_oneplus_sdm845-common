@@ -20,7 +20,7 @@
     <string name="srgb_mode_title">sRGB mode</string>
     <string name="hbm_mode_title">High brightness mode</string>
     <string name="hbm_mode_summary">Instantly enable the peak luminance of the display</string>
-    <string name="auto_hbm_summary"></string>
+    <string name="auto_hbm_summary">Automatically enable the peak luminance of the display</string>
     <string name="auto_hbm_title">Automatic High brightness mode</string>
     <string name="auto_hbm_threshold_title">Automatic High brightness mode threshold (lux)</string>
     <string name="auto_hbm_threshold_summary"></string>

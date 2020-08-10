@@ -18,6 +18,7 @@ package org.msm.xtended.device.DeviceSettings.speaker;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
@@ -26,6 +27,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
@@ -56,6 +59,14 @@ public class ClearSpeakerFragment extends PreferenceFragment implements
 
         mHandler = new Handler();
         mAudioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
+
+        Resources res = getResources();
+        Window win = getActivity().getWindow();
+
+        win.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        win.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        win.setNavigationBarColor(res.getColor(R.color.primary_color));
+        win.setNavigationBarDividerColor(res.getColor(R.color.primary_color));
     }
 
     @Override
