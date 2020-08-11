@@ -20,10 +20,10 @@ on boot
     chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
     # OOS Camera
-    mkdir /data/misc/xtended 0770 cameraserver audio
-    write /data/misc/xtended/client_package_name 0
-    chown cameraserver audio /data/misc/xtended/client_package_name
-    chmod 0644 /data/misc/xtended/client_package_name
+    mkdir /data/misc/aosp 0770 cameraserver audio
+    write /data/misc/aosp/client_package_name 0
+    chown cameraserver audio /data/misc/aosp/client_package_name
+    chmod 0644 /data/misc/aosp/client_package_name
 
     # Smart charging
     chown system system /sys/class/power_supply/battery/input_suspend

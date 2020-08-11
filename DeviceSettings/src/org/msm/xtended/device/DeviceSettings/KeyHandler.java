@@ -77,7 +77,7 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
-    public static final String CLIENT_PACKAGE_PATH = "/data/misc/xtended/client_package_name";
+    public static final String CLIENT_PACKAGE_PATH = "/data/misc/aosp/client_package_name";
 
     private final Context mContext;
     private final PowerManager mPowerManager;
