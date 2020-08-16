@@ -87,6 +87,13 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper \
     vendor.oneplus.camera.CameraHIDL-V1.0-java
 
+# OnePlus Camera Overlay
+PRODUCT_PACKAGES += \
+    opcameraconf
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.boot.vendor.overlay.theme=com.shapeshift.opcameraconf
+
 # Prebuilts
 PRODUCT_PACKAGES += \
     OnePlusCamera \
