@@ -32,6 +32,15 @@ on boot
 on charger
     write /sys/class/backlight/panel0-backlight/brightness 150
 
+on post-fs-data
+    # Clear existing log and start the service
+    rm /cache/boot_log.txt
+    start logger
+
+on property:sys.boot_completed=1
+    # Stop the logger service
+    stop logger
+
 service cvphalservice /system/bin/true
     disabled
 
@@ -45,3 +54,10 @@ service factory-hal-1-0 /system/bin/true
 
 service oneplus_brain_service /system/bin/true
     disabled
+
+service logger /system/bin/logcat -b all -D -f /cache/boot_log.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
