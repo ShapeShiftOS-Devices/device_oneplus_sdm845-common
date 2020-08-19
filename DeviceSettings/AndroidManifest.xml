@@ -16,8 +16,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           android:sharedUserId="android.uid.system"
           package="org.msm.xtended.device.DeviceSettings"
-          android:versionCode="1"
-          android:versionName="1.0" >
+          android:versionCode="2"
+          android:versionName="2.0" >
 
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
