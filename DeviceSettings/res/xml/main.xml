@@ -10,7 +10,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <PreferenceCategory
         android:key="graphics"
         android:title="@string/display_title">
@@ -96,6 +98,37 @@
                 android:targetClass="org.msm.xtended.device.DeviceSettings.speaker.ClearSpeakerActivity"
                 android:targetPackage="org.msm.xtended.device.DeviceSettings.speaker" />
         </Preference>
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="audio"
+        android:title="@string/audio_amplification">
+
+        <org.msm.xtended.device.DeviceSettings.preferences.CustomSeekBarPreference
+            android:defaultValue="0"
+            android:key="microphone_gain"
+            android:max="20"
+            app:min="-10"
+            android:icon="@drawable/ic_mic"
+            android:title="@string/microphone_gain" />
+
+        <org.msm.xtended.device.DeviceSettings.preferences.SecureSettingCustomSeekBarPreference
+            android:defaultValue="0"
+            android:key="earpiece_gain"
+            android:max="20"
+            app:min="-10"
+            android:icon="@drawable/ic_earpiece"
+            android:title="@string/earpiece_gain" />
+
+        <org.msm.xtended.device.DeviceSettings.preferences.SecureSettingCustomSeekBarPreference 
+            android:defaultValue="0"
+            android:key="speaker_gain" 
+            android:max="20"
+            app:min="-10" 
+            android:icon="@drawable/ic_speaker"
+            android:title="@string/speaker_gain" />
 
     </PreferenceCategory>
 

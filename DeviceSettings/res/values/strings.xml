@@ -10,7 +10,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="device_title">OnePlus Settings</string>
     <string name="device_summary">Adjust OnePlus device specific settings</string>
 
@@ -86,5 +86,17 @@
     <string name="clear_speaker_title">Clear speaker</string>
     <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>
     <string name="clear_speaker_description">Run this feature once or twice if you find that your speaker is lightly blocked by dust. Set media volume to maximum.\n\nIf the speaker is blocked heavily, run this feature 2-5 times while shaking your device with the speaker facing downwards.</string>
+
+    <!-- Volume Gain -->
+    <string name="microphone_gain">Microphone gain</string>
+    <string name="earpiece_gain">Earpiece gain (Calls)</string>
+    <string name="speaker_gain">Speaker gain</string>
+    <string name="audio_amplification">Audio Amplification</string>
+
+    <!-- Audio amplification -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
 
 </resources>

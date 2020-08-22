@@ -21,6 +21,7 @@ import android.util.Log;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -33,6 +34,10 @@ public final class FileUtils {
 
     private FileUtils() {
         // This class is not supposed to be instantiated
+    }
+
+    static boolean fileWritable(String filename) {
+        return fileExists(filename) && new File(filename).canWrite();
     }
 
     /**
@@ -63,6 +68,70 @@ public final class FileUtils {
         }
 
         return line;
+    }
+
+    public static void setValue(String path, int value) {
+        if (fileWritable(path)) {
+            if (path == null) {
+                return;
+            }
+            try {
+                FileOutputStream fos = new FileOutputStream(new File(path));
+                fos.write(Integer.toString(value).getBytes());
+                fos.flush();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    static void setValue(String path, boolean value) {
+        if (fileWritable(path)) {
+            if (path == null) {
+                return;
+            }
+            try {
+                FileOutputStream fos = new FileOutputStream(new File(path));
+                fos.write((value ? "1" : "0").getBytes());
+                fos.flush();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    static void setValue(String path, double value) {
+        if (fileWritable(path)) {
+            if (path == null) {
+                return;
+            }
+            try {
+                FileOutputStream fos = new FileOutputStream(new File(path));
+                fos.write(Long.toString(Math.round(value)).getBytes());
+                fos.flush();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    static void setValue(String path, String value) {
+        if (fileWritable(path)) {
+            if (path == null) {
+                return;
+            }
+            try {
+                FileOutputStream fos = new FileOutputStream(new File(path));
+                fos.write(value.getBytes());
+                fos.flush();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -100,9 +169,11 @@ public final class FileUtils {
      *
      * @return true if exists, false if not
      */
-    public static boolean fileExists(String fileName) {
-        final File file = new File(fileName);
-        return file.exists();
+    public static boolean fileExists(String filename) {
+        if (filename == null) {
+            return false;
+        }
+        return new File(filename).exists();
     }
 
     /**

@@ -7,3 +7,7 @@ allow system_app system_app_data_file:{ file lnk_file } create_file_perms;
 binder_call(system_app, gpuservice)
 allow system_app cgroup:file rw_file_perms;
 allow system_app sysfs_thermal:file w_file_perms;
+allow system_app sysfs_egain:file { open read getattr write };
+allow system_app sysfs_mgain:file { open read getattr write };
+allow system_app sysfs_sgain:file { open read getattr write };
+

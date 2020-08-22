@@ -26,3 +26,12 @@ genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys5/restart_level u
 
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys6/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys6/restart_level u:object_r:sysfs_ssr_toggle:s0
+
+# Earpiece gain
+genfscon sysfs /kernel/sound_control/earpiece_gain                                       u:object_r:sysfs_egain:s0
+
+# Microphone gain
+genfscon sysfs /kernel/sound_control/mic_gain                                            u:object_r:sysfs_mgain:s0
+
+# Speaker gain
+genfscon sysfs /kernel/sound_control/speaker_gain                                            u:object_r:sysfs_sgain:s0
