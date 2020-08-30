@@ -188,6 +188,22 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="thermal"
+        android:title="@string/thermal_title">
+
+        <Preference
+            android:key="thermal_profiles"
+            android:icon="@drawable/ic_thermal"
+            android:title="@string/thermal_profiles_title"
+            android:summary="@string/thermal_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.msm.xtended.device.DeviceSettings.thermal"
+                    android:targetClass="org.msm.xtended.device.DeviceSettings.thermal.ThermalActivity" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/category_vibrator">
         <org.msm.xtended.device.DeviceSettings.VibratorStrengthPreference
             android:key="vib_strength"

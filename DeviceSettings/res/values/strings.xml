@@ -72,7 +72,8 @@
     <string name="fps_info_summary">Show overlay with with current frames per second</string>
 
     <!-- Thermal profiles -->
-    <string name="thermal_title">Thermal profiles</string>
+    <string name="thermal_title">Performance</string>
+    <string name="thermal_profiles_title">Thermal profiles</string>
     <string name="thermal_summary">Adjust per-app thermal profiles for optimum performance</string>
     <string name="thermal_default">Default</string>
     <string name="thermal_benchmark">Benchmark</string>

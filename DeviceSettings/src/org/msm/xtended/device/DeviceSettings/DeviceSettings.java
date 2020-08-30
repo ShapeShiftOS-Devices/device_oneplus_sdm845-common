@@ -52,6 +52,7 @@ import org.msm.xtended.device.DeviceSettings.preferences.CustomSeekBarPreference
 import org.msm.xtended.device.DeviceSettings.R;
 import org.msm.xtended.device.DeviceSettings.SuShell;
 import org.msm.xtended.device.DeviceSettings.SuTask;
+import org.msm.xtended.device.DeviceSettings.thermal.ThermalActivity;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -84,6 +85,7 @@ public class DeviceSettings extends PreferenceFragment
     private static final String SELINUX_CATEGORY = "selinux";
     private static final String PREF_SELINUX_MODE = "selinux_mode";
     private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
+    private static final String PREF_THERMAL_PROFILES = "thermal_profiles";
 
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
@@ -98,6 +100,7 @@ public class DeviceSettings extends PreferenceFragment
     private CustomSeekBarPreference mSpeakerGain;
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
+    private Preference mThermalProfiles;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -184,6 +187,14 @@ public class DeviceSettings extends PreferenceFragment
         .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
         .contains(PREF_SELINUX_MODE));
         mSelinuxPersistence.setEnabled(isRooted);
+
+        mThermalProfiles = (Preference)findPreference(PREF_THERMAL_PROFILES);
+        mThermalProfiles.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(), ThermalActivity.class);
+            startActivity(intent);
+            return true;
+        });
+
     }
 
     @Override
