@@ -12,7 +12,6 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <PreferenceCategory
         android:key="graphics"
         android:title="@string/display_title">
@@ -121,14 +120,6 @@
             app:min="-10"
             android:icon="@drawable/ic_earpiece"
             android:title="@string/earpiece_gain" />
-
-        <com.oneplus.extras.preferences.SecureSettingCustomSeekBarPreference 
-            android:defaultValue="0"
-            android:key="speaker_gain" 
-            android:max="20"
-            app:min="-10" 
-            android:icon="@drawable/ic_speaker"
-            android:title="@string/speaker_gain" />
 
     </PreferenceCategory>
 

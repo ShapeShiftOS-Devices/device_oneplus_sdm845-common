@@ -8,7 +8,6 @@ allow init {
     sysfs_graphics
     sysfs_egain
     sysfs_mgain
-    sysfs_sgain
 }:file { open read setattr };
 
 allow init sysfs_battery_supply:file { setattr };

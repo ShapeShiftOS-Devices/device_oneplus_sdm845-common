@@ -71,8 +71,6 @@ public class DeviceSettings extends PreferenceFragment
     public static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
     public static final String PREF_EARPIECE_GAIN = "earpiece_gain";
     public static final String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
-    public static final String PREF_SPEAKER_GAIN = "speaker_gain";
-    public static final String SPEAKER_GAIN_PATH = "/sys/kernel/sound_control/speaker_gain";
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     private VibratorStrengthPreference mVibratorStrength;
@@ -97,7 +95,6 @@ public class DeviceSettings extends PreferenceFragment
     private static SwitchPreference mFpsInfo;
     private CustomSeekBarPreference mMicrophoneGain;
     private CustomSeekBarPreference mEarpieceGain;
-    private CustomSeekBarPreference mSpeakerGain;
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
     private Preference mThermalProfiles;
@@ -169,9 +166,6 @@ public class DeviceSettings extends PreferenceFragment
         mEarpieceGain = (CustomSeekBarPreference) findPreference(PREF_EARPIECE_GAIN);
         mEarpieceGain.setOnPreferenceChangeListener(this);
 
-        mSpeakerGain = (CustomSeekBarPreference) findPreference(PREF_SPEAKER_GAIN);
-        mSpeakerGain.setOnPreferenceChangeListener(this);
-
         // SELinux
         boolean isRooted = SuShell.detectValidSuInPath();
         Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
@@ -216,8 +210,6 @@ public class DeviceSettings extends PreferenceFragment
             FileUtils.setValue(MICROPHONE_GAIN_PATH, newValue + " " + newValue);       
         } else if (preference == mEarpieceGain) {    
             FileUtils.setValue(EARPIECE_GAIN_PATH, newValue + " " + newValue);       
-        } else if (preference == mSpeakerGain) {    
-            FileUtils.setValue(SPEAKER_GAIN_PATH, newValue + " " + newValue);       
         } else if (preference == mSelinuxMode) {
             boolean enabled = (Boolean) newValue;
             new SwitchSelinuxTask(getActivity()).execute(enabled);
