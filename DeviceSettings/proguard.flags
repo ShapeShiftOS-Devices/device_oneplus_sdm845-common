@@ -1,3 +1,3 @@
--keep class org.msm.xtended.device.DeviceSettings.* {
+-keep class com.oneplus.extras.* {
   *;
 }

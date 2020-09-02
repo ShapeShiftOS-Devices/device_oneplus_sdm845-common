@@ -24,8 +24,8 @@
             android:summary="@string/panel_category_summary"
             android:persistent="false" >
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.msm.xtended.device.DeviceSettings"
-                    android:targetClass="org.msm.xtended.device.DeviceSettings.PanelSettingsActivity" />
+                    android:targetPackage="com.oneplus.extras"
+                    android:targetClass="com.oneplus.extras.PanelSettingsActivity" />
         </Preference>
 
         <SwitchPreference
@@ -46,7 +46,7 @@
             android:summary="@string/auto_hbm_summary"
             android:title="@string/auto_hbm_title" />
 
-        <org.msm.xtended.device.DeviceSettings.AutoHBMThresholdPreference
+        <com.oneplus.extras.AutoHBMThresholdPreference
             android:key="auto_hbm_threshold"
             android:title="@string/auto_hbm_threshold_title"
             android:summary="@string/auto_hbm_threshold_summary" />
@@ -72,8 +72,8 @@
             android:summary="@string/custom_doze_settings_summary">
             <intent
                     android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.msm.xtended.settings.doze" 
-                    android:targetClass="org.msm.xtended.settings.doze.DozeSettingsActivity"/>
+                    android:targetPackage="com.oneplus.settings.extras.doze" 
+                    android:targetClass="com.oneplus.settings.extras.doze.DozeSettingsActivity"/>
         </Preference>
 
         <Preference
@@ -95,8 +95,8 @@
             android:title="@string/clear_speaker_title" >
             <intent 
                 android:action="android.intent.action.MAIN" 
-                android:targetClass="org.msm.xtended.device.DeviceSettings.speaker.ClearSpeakerActivity"
-                android:targetPackage="org.msm.xtended.device.DeviceSettings.speaker" />
+                android:targetClass="com.oneplus.extras.speaker.ClearSpeakerActivity"
+                android:targetPackage="com.oneplus.extras.speaker" />
         </Preference>
 
     </PreferenceCategory>
@@ -106,7 +106,7 @@
         android:key="audio"
         android:title="@string/audio_amplification">
 
-        <org.msm.xtended.device.DeviceSettings.preferences.CustomSeekBarPreference
+        <com.oneplus.extras.preferences.CustomSeekBarPreference
             android:defaultValue="0"
             android:key="microphone_gain"
             android:max="20"
@@ -114,7 +114,7 @@
             android:icon="@drawable/ic_mic"
             android:title="@string/microphone_gain" />
 
-        <org.msm.xtended.device.DeviceSettings.preferences.SecureSettingCustomSeekBarPreference
+        <com.oneplus.extras.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="0"
             android:key="earpiece_gain"
             android:max="20"
@@ -122,7 +122,7 @@
             android:icon="@drawable/ic_earpiece"
             android:title="@string/earpiece_gain" />
 
-        <org.msm.xtended.device.DeviceSettings.preferences.SecureSettingCustomSeekBarPreference 
+        <com.oneplus.extras.preferences.SecureSettingCustomSeekBarPreference 
             android:defaultValue="0"
             android:key="speaker_gain" 
             android:max="20"
@@ -198,26 +198,26 @@
             android:summary="@string/thermal_summary"
             android:persistent="false" >
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.msm.xtended.device.DeviceSettings.thermal"
-                    android:targetClass="org.msm.xtended.device.DeviceSettings.thermal.ThermalActivity" />
+                    android:targetPackage="com.oneplus.extras.thermal"
+                    android:targetClass="com.oneplus.extras.thermal.ThermalActivity" />
         </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/category_vibrator">
-        <org.msm.xtended.device.DeviceSettings.VibratorStrengthPreference
+        <com.oneplus.extras.VibratorStrengthPreference
             android:key="vib_strength"
             android:icon="@drawable/ic_vibration_icon"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
 
-        <org.msm.xtended.device.DeviceSettings.VibratorCallStrengthPreference
+        <com.oneplus.extras.VibratorCallStrengthPreference
             android:key="vib_call_strength"
             android:icon="@drawable/ic_vibration_icon"
             android:title="@string/vib_call_strength_title_head"
             android:summary="@string/vib_call_strength_summary_head" />
 
-        <org.msm.xtended.device.DeviceSettings.VibratorNotifStrengthPreference
+        <com.oneplus.extras.VibratorNotifStrengthPreference
             android:key="vib_notif_strength"
             android:icon="@drawable/ic_vibration_icon"
             android:title="@string/vib_notif_strength_title_head"

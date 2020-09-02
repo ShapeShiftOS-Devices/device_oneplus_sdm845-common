@@ -27,8 +27,8 @@
     <string name="config_cpuTempSensor" translatable="false">/sys/class/thermal/thermal_zone0/temp</string>
     
     <!-- Target DeviceSettings -->
-    <string name="config_device_parts_package_name" translatable="false">org.msm.xtended.device.DeviceSettings</string>
-    <string name="config_device_parts_package_activity" translatable="false">org.msm.xtended.device.DeviceSettings.DeviceSettingsActivity</string>
+    <string name="config_device_parts_package_name" translatable="false">com.oneplus.extras</string>
+    <string name="config_device_parts_package_activity" translatable="false">com.oneplus.extras.DeviceSettingsActivity</string>
 
     <!-- FPSInfoService Fps file path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/sde-crtc-0/measured_fps</string>
@@ -53,7 +53,7 @@
     <bool name="config_cleanupUnusedFingerprints">false</bool>
 
     <!-- Whether key handler sends intent when changing slider position -->
-    <string name="config_alertSliderIntent">org.msm.xtended.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
+    <string name="config_alertSliderIntent">com.oneplus.extras.UPDATE_SLIDER_POSITION</string>
 
     <!-- If true, the display will be shifted around in ambient mode. -->
     <bool name="config_enableBurnInProtection">true</bool>

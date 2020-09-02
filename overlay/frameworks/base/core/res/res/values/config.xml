@@ -358,7 +358,7 @@
 
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
-        <item>org.msm.xtended.device.DeviceSettings.KeyHandler</item>
+        <item>com.oneplus.extras.KeyHandler</item>
         <item>com.android.touch.gestures.KeyHandler</item>
     </string-array>
 

@@ -15,7 +15,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           android:sharedUserId="android.uid.system"
-          package="org.msm.xtended.device.DeviceSettings"
+          package="com.oneplus.extras"
           android:versionCode="2"
           android:versionName="2.0" >
 
@@ -24,7 +24,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
-    <protected-broadcast android:name=">org.msm.xtended.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
+    <protected-broadcast android:name=">com.oneplus.extras.UPDATE_SLIDER_POSITION" />
 
     <uses-sdk
         android:minSdkVersion="24" />
@@ -55,7 +55,7 @@
         <activity android:name=".KeyHandler" />
 
         <activity
-            android:name="org.msm.xtended.device.DeviceSettings.PanelSettingsActivity"
+            android:name="com.oneplus.extras.PanelSettingsActivity"
             android:exported="true"
             android:label="@string/panel_category_title"
             android:launchMode="singleTask" >
@@ -66,7 +66,7 @@
         </activity>
 
         <receiver 
-            android:name="org.msm.xtended.device.DeviceSettings.Startup" 
+            android:name="com.oneplus.extras.Startup" 
             android:enabled="true">
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -85,7 +85,7 @@
         </activity>
 
         <activity
-            android:name="org.msm.xtended.device.DeviceSettings.thermal.ThermalActivity"
+            android:name="com.oneplus.extras.thermal.ThermalActivity"
             android:exported="true"
             android:label="@string/thermal_title"
             android:launchMode="singleTask" >
@@ -97,7 +97,7 @@
 
         <!-- Panel Mode's tile -->
         <service
-            android:name="org.msm.xtended.device.DeviceSettings.PanelModeTileService"
+            android:name="com.oneplus.extras.PanelModeTileService"
             android:icon="@drawable/ic_panel_tile"
             android:label="@string/tile_panel_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -109,7 +109,7 @@
 
         <!-- HBM tile -->
         <service
-            android:name="org.msm.xtended.device.DeviceSettings.HBMModeTileService"
+            android:name="com.oneplus.extras.HBMModeTileService"
             android:icon="@drawable/ic_hbm_tile"
             android:label="@string/tile_hbm_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -120,11 +120,11 @@
         </service>
 
         <!-- Auto HBM service -->
-        <service android:name="org.msm.xtended.device.DeviceSettings.AutoHBMService" />
+        <service android:name="com.oneplus.extras.AutoHBMService" />
 
         <!-- DC-Dimming tile -->
         <service
-            android:name="org.msm.xtended.device.DeviceSettings.DCModeTileService"
+            android:name="com.oneplus.extras.DCModeTileService"
             android:icon="@drawable/ic_dimming_off"
             android:label="@string/tile_dc_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -136,7 +136,7 @@
 
         <!-- Log tile -->
         <service
-            android:name="org.msm.xtended.device.DeviceSettings.LogTile"
+            android:name="com.oneplus.extras.LogTile"
             android:icon="@drawable/ic_qs_log"
             android:label="@string/quick_settings_log_tile_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -160,7 +160,7 @@
 
         <!-- Thermal profiles tile -->
         <service
-            android:name="org.msm.xtended.device.DeviceSettings.thermal.ThermalTileService"
+            android:name="com.oneplus.extras.thermal.ThermalTileService"
             android:icon="@drawable/ic_thermal"
             android:label="@string/thermal_profiles_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -171,7 +171,7 @@
         </service>
 
         <!-- FPS info service -->
-        <service android:name="org.msm.xtended.device.DeviceSettings.FPSInfoService"
+        <service android:name="com.oneplus.extras.FPSInfoService"
                 android:exported="false">
         </service>
 
@@ -184,7 +184,7 @@
         <!-- Search Provider -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
-            android:authorities="org.msm.xtended.device"
+            android:authorities="com.oneplus.extras"
             android:multiprocess="false"
             android:grantUriPermissions="true"
             android:permission="android.permission.READ_SEARCH_INDEXABLES"

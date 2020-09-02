@@ -13,7 +13,7 @@
 
 <resources>
     <!-- Device specific doze package -->
-    <string name="config_customDozePackage">org.msm.xtended.settings.doze/org.msm.xtended.settings.doze.DozeSettingsActivity</string>
+    <string name="config_customDozePackage">com.oneplus.settings.extra.doze/com.oneplus.settings.extras.doze.DozeSettingsActivity</string>
 
     <!-- Smart Charging -->
     <bool name="config_supportSmartCharging">true</bool>
