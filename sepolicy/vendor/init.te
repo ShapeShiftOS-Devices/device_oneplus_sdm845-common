@@ -1,0 +1,2 @@
+# SeLinux Switch
+allow init su:process { noatsecure  rlimitinh  siginh  transition };
