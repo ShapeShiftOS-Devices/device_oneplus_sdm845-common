@@ -20,6 +20,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.oneplus.extras.R;
+
 public abstract class SuTask<Params> extends AsyncTask<Params, Void, Boolean> {
     private Context mContext;
 
@@ -45,7 +47,7 @@ public abstract class SuTask<Params> extends AsyncTask<Params, Void, Boolean> {
     protected void onPostExecute(Boolean result) {
         super.onPostExecute(result);
         if (!result) {
-            Toast.makeText(mContext, mContext.getString(R.string.cannot_get_su),
+            Toast.makeText(mContext, R.string.cannot_get_su,
                     Toast.LENGTH_LONG).show();
         }
     }

@@ -17,7 +17,6 @@
 */
 package com.oneplus.extras;
 
-import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -30,19 +29,11 @@ import android.util.Log;
 import android.widget.Toast;
 import java.util.List;
 
-import com.oneplus.extras.thermal.ThermalUtils;
-
 import com.oneplus.extras.FileUtils;
 
 public class Startup extends BroadcastReceiver {
 
     private boolean mHBM = false;
-
-    private static final boolean DEBUG = false;
-
-    private static final String PREF_SELINUX_MODE = "selinux_mode";
-    private static final String TAG = "SettingsOnBoot";
-    private boolean mSetupRunning = false;
     private Context settingsContext = null;
     private Context mContext;
 
@@ -50,8 +41,6 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
 
         mContext = context;
-
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
 
         VibratorStrengthPreference.restore(context);
         VibratorCallStrengthPreference.restore(context);
@@ -95,56 +84,6 @@ public class Startup extends BroadcastReceiver {
        }
 
         Utils.enableService(context);
-        ThermalUtils.startService(context);
-
-        mContext = context;
-        ActivityManager activityManager =
-                (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningAppProcessInfo> procInfos =
-                activityManager.getRunningAppProcesses();
-        for(int i = 0; i < procInfos.size(); i++) {
-            if(procInfos.get(i).processName.equals("com.google.android.setupwizard")) {
-                mSetupRunning = true;
-            }
-        }
-
-        if (DEBUG) Log.d(TAG, "We are" + mSetupRunning + "running in setup");
-
-        if(!mSetupRunning) {
-            try {
-                settingsContext = context.createPackageContext("com.android.settings", 0);
-            } catch (Exception e) {
-                Log.e(TAG, "Package not found", e);
-            }
-            SharedPreferences sharedpreferences = context.getSharedPreferences("selinux_pref", Context.MODE_PRIVATE);
-
-            if (DEBUG) Log.d(TAG, "sharedpreferences.contains(" + PREF_SELINUX_MODE + "): " + (sharedpreferences.contains(PREF_SELINUX_MODE) ? "True":"False"));
-
-            if (sharedpreferences.contains(PREF_SELINUX_MODE)) {
-                boolean currentIsSelinuxEnforcing = SELinux.isSELinuxEnforced();
-                boolean isSelinuxEnforcing = sharedpreferences.getBoolean(PREF_SELINUX_MODE, currentIsSelinuxEnforcing);
-                if (DEBUG) Log.d(TAG, String.format("currentIsSelinuxEnforcing: %s, isSelinuxEnforcing: %s", (currentIsSelinuxEnforcing ? "True" : "False"), (isSelinuxEnforcing ? "True" : "False")));
-                try {
-                    if (isSelinuxEnforcing) {
-                        if (!currentIsSelinuxEnforcing) {
-                            SuShell.runWithSuCheck("setenforce 1");
-                            showToast(context.getString(R.string.selinux_enforcing_toast_title),
-                                    context);
-                        }
-                    } else {
-                        if (currentIsSelinuxEnforcing) {
-                            SuShell.runWithSuCheck("setenforce 0");
-                            showToast(context.getString(R.string.selinux_permissive_toast_title),
-                                    context);
-                        }
-                    }
-                } catch (SuShell.SuDeniedException e) {
-                    showToast(context.getString(R.string.cannot_get_su), context);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
     private void restore(String file, boolean enabled) {
@@ -161,10 +100,5 @@ public class Startup extends BroadcastReceiver {
             return;
         }
         Utils.writeValue(file, value);
-    }
-
-    private void showToast(String toastString, Context context) {
-        Toast.makeText(context, toastString, Toast.LENGTH_SHORT)
-                .show();
     }
 }
