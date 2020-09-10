@@ -119,6 +119,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     OnePlusDoze
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhwbinder \
+
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
