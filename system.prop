@@ -34,6 +34,9 @@ audio.offload.min.duration.secs=30
 persist.vendor.audio.hac.enable=false 
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
+# BPF
+ro.kernel.ebpf.supported=true
+
 # Camera
 camera.disable_zsl_mode=true 
 vendor.camera.aux.packagelist=com.android.camera
