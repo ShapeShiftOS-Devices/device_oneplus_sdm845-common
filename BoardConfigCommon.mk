@@ -23,6 +23,9 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 # Compile libhwui in performance mode
 HWUI_COMPILE_FOR_PERF := true
 
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
