@@ -53,6 +53,9 @@ TARGET_KERNEL_CLANG_COMPILE := true
 # LMKD
 TARGET_LMKD_STATS_LOG := true
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 BUILD_WITHOUT_VENDOR := true
