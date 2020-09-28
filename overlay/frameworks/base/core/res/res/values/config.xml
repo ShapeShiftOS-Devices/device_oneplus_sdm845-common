@@ -381,4 +381,7 @@
 
     <!-- Defines custom Vendor sensor for pocket detection. -->
     <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
+
+    <!-- Enable the RingtonePickerActivity in 'com.android.providers.media'. -->
+    <bool name="config_defaultRingtonePickerEnabled">true</bool>
 </resources>
