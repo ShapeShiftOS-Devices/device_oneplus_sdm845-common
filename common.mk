@@ -20,6 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 
+# Inherit from common device
+$(call inherit-product, device/oneplus/sdm845-common/configurations.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -203,9 +206,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-    
-# Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED := true    
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
