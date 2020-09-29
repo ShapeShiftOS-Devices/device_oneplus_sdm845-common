@@ -94,5 +94,5 @@ void vendor_load_properties()
     property_override("ro.processor.model", "SDM845");
 
     property_override("ro.oem_unlock_supported", "0");
-    property_override("vendor.audio.feature.spkr_prot.enable", "vendor.audio.feature.spkr_prot.enable", "false");
+    property_override("vendor.audio.feature.spkr_prot.enable", "false");
 }
