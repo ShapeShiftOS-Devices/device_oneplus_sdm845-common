@@ -33,6 +33,8 @@
     <string name="tile_panel_mode">Panel modes</string>
     <string name="tile_hbm_mode">High brightness modes</string>
     <string name="tile_dc_mode">DC-Dimming</string>
+    <string name="custom_doze_settings_title">Advanced doze settings</string>
+    <string name="custom_doze_settings_summary">Handle sensor related wake events</string>
 
     <!-- Notification slider -->
     <string name="notification_slider_category_title">Notification slider</string>
@@ -56,4 +58,5 @@
     <string name="vib_call_strength_summary_head">Define the strength of the vibrator during an incoming call</string>
     <string name="vib_notif_strength_title_head">Notification Strength</string>
     <string name="vib_notif_strength_summary_head">Define the strength of the vibrator during an incoming notification</string>
+
 </resources>
