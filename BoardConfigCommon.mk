@@ -126,17 +126,11 @@ TARGET_USES_MKE2FS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 
 # Sepolicy
+include device/qcom/sepolicy/SEPolicy.mk
+
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private
-
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/qva/public
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
