@@ -20,3 +20,5 @@ type sysfs_sgain, sysfs_type, fs_type;
 type display_misc_file, file_type, data_file_type, core_data_file_type;
 
 type aosp_data_file, file_type, data_file_type,  core_data_file_type;
+
+type qti_init_shell_exec, exec_type, vendor_file_type, file_type;
