@@ -70,6 +70,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
     public static final String PREF_EARPIECE_GAIN = "earpiece_gain";
     public static final String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
+    public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     private VibratorStrengthPreference mVibratorStrength;
