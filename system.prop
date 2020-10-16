@@ -58,6 +58,7 @@ persist.vendor.dpm.feature=9
 persist.dbg.volte_avail_ovr=1 
 persist.dbg.vt_avail_ovr=1  
 persist.dbg.wfc_avail_ovr=1
+persist.radio.calls.on.ims=1
 
 # IOP
 vendor.iop.enable_prefetch_ofr=1
@@ -77,6 +78,12 @@ persist.vendor.radio.data_ltd_sys_ind=1
 persist.vendor.radio.force_on_dc=true 
 persist.vendor.radio.ignore_dom_time=10 
 ro.telephony.default_network=22,22
+
+# RCS
+persist.rcs.supported=1
+persist.radio.rat_on=combine
+persist.radio.data_ltd_sys_ind=1
+persist.radio.data_con_rprt=1
 
 # Touchscreen
 persist.vendor.qti.inputopts.enable=true 
