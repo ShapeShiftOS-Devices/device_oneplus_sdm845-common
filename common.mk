@@ -169,6 +169,9 @@ PRODUCT_BOOT_JARS += oneplus-mock
 PRODUCT_PACKAGES += \
     power.qcom:64
 
+# Properties
+-include $(LOCAL_PATH)/props.mk
+
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
