@@ -29,6 +29,8 @@
 
 #include <stdlib.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <sys/_system_properties.h>
 
 #include <android-base/properties.h>
@@ -58,6 +60,49 @@ void property_override_dual(char const system_prop[], char const vendor_prop[],
     property_override(vendor_prop, value);
 }
 
+          /* From Magisk@jni/magiskhide/hide_utils.c */
+static const char *snet_prop_key[] = {
+    "ro.boot.vbmeta.device_state",
+    "ro.boot.verifiedbootstate",
+    "ro.boot.flash.locked",
+    "ro.boot.selinux",
+    "ro.boot.veritymode",
+    "ro.boot.warranty_bit",
+    "ro.warranty_bit",
+    "ro.debuggable",
+    "ro.secure",
+    "ro.build.type",
+    "ro.build.tags",
+    "ro.build.selinux",
+    NULL
+};
+
+ static const char *snet_prop_value[] = {
+    "locked",
+    "green",
+    "1",
+    "enforcing",
+    "enforcing",
+    "0",
+    "0",
+    "0",
+    "1",
+    "user",
+    "release-keys",
+    "1",
+    NULL
+};
+
+ static void workaround_snet_properties() {
+
+     // Hide all sensitive props
+    for (int i = 0; snet_prop_key[i]; ++i) {
+        property_override(snet_prop_key[i], snet_prop_value[i]);
+    }
+
+     chmod("/sys/fs/selinux/enforce", 0640);
+    chmod("/sys/fs/selinux/policy", 0440);
+}
 
 void load_dalvikvm_properties()
 {
@@ -86,11 +131,15 @@ void load_dalvikvm_properties()
 
 void vendor_load_properties()
 {
-
     // Load dalvik config
     load_dalvikvm_properties();
 
     // Property Overrides
     property_override("ro.control_privapp_permissions", "log");
-    property_override_dual("vendor.audio.feature.spkr_prot.enable", "vendor.audio.feature.spkr_prot.enable", "false");
+
+    // Disable speaker protect in vendor
+    property_override("vendor.audio.feature.spkr_prot.enable", "false");
+
+    // Workaround SafetyNet
+    workaround_snet_properties();
 }
