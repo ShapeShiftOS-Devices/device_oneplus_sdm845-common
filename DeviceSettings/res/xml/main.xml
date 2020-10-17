@@ -18,6 +18,7 @@
         <Preference
             android:key="panel_category"
             android:title="@string/panel_category_title"
+            android:icon="@drawable/ic_panel_modes_icon"
             android:summary="@string/panel_category_summary"
             android:persistent="false" >
             <intent android:action="android.intent.action.MAIN"
@@ -25,19 +26,10 @@
                     android:targetClass="org.lineageos.device.DeviceSettings.PanelSettingsActivity" />
         </Preference>
 
-        <SwitchPreference
-            android:key="hbm"
-            android:summary="@string/hbm_mode_summary"
-            android:title="@string/hbm_mode_title" />
-
-        <SwitchPreference
-            android:key="dc"
-            android:summary="@string/dc_mode_summary"
-            android:title="@string/dc_mode_title" />
-
         <Preference
             android:key="doze"
             android:persistent="false"
+            android:icon="@drawable/ic_doze"
             android:title="@string/custom_doze_settings_title"
             android:summary="@string/custom_doze_settings_summary">
             <intent
@@ -45,6 +37,18 @@
                     android:targetPackage="org.lineageos.settings.doze" 
                     android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity"/>
         </Preference>
+
+        <SwitchPreference
+            android:key="hbm"
+            android:icon="@drawable/ic_hbm_mode_icon"
+            android:summary="@string/hbm_mode_summary"
+            android:title="@string/hbm_mode_title" />
+
+        <SwitchPreference
+            android:key="dc"
+            android:icon="@drawable/ic_dc_mode_icon"
+            android:summary="@string/dc_mode_summary"
+            android:title="@string/dc_mode_title" />
 
     </PreferenceCategory>
 
@@ -57,6 +61,7 @@
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_top_position"
             android:summary="%s"
+            android:icon="@drawable/ic_up_icon"
             android:entries="@array/notification_slider_action_entries"
             android:entryValues="@array/notification_slider_action_entry_values" />
 
@@ -65,32 +70,38 @@
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_middle_position"
             android:summary="%s"
+            android:icon="@drawable/ic_middle_icon"
             android:entries="@array/notification_slider_action_entries"
             android:entryValues="@array/notification_slider_action_entry_values" />
 
-        <ListPreference
-          android:key="keycode_bottom_position"
-          android:dialogTitle="@string/notification_slider_selection_dialog_title"
-          android:title="@string/notification_slider_bottom_position"
-          android:summary="%s"
-          android:entries="@array/notification_slider_action_entries"
-          android:entryValues="@array/notification_slider_action_entry_values" />
+         <ListPreference
+            android:key="keycode_bottom_position"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_bottom_position"
+            android:summary="%s"
+            android:icon="@drawable/ic_down_icon"
+            android:entries="@array/notification_slider_action_entries"
+            android:entryValues="@array/notification_slider_action_entry_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/category_vibrator">
         <org.lineageos.device.DeviceSettings.VibratorStrengthPreference
             android:key="vib_strength"
+            android:icon="@drawable/ic_vibration"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
 
         <org.lineageos.device.DeviceSettings.VibratorCallStrengthPreference
             android:key="vib_call_strength"
+            android:icon="@drawable/ic_call"
             android:title="@string/vib_call_strength_title_head"
             android:summary="@string/vib_call_strength_summary_head" />
 
         <org.lineageos.device.DeviceSettings.VibratorNotifStrengthPreference
             android:key="vib_notif_strength"
+            android:icon="@drawable/ic_notifications"
             android:title="@string/vib_notif_strength_title_head"
             android:summary="@string/vib_notif_strength_summary_head" />
     </PreferenceCategory>
