@@ -15,4 +15,8 @@
     <!-- Raise to wake strings-->
     <string name="raise_to_wake_gesture_title">Raise to wake</string>
     <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
+
+    <!-- Smart wake strings-->
+    <string name="smart_wake_gesture_title">Smart Wake</string>
+    <string name="smart_wake_gesture_summary">Pulse notifications on slight motion of device and wake screen when picked up</string>
 </resources>

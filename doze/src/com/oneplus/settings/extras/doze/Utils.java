@@ -29,7 +29,6 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
 
-
 import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 
@@ -47,6 +46,7 @@ public final class Utils {
 
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_RAISE_TO_WAKE_KEY = "gesture_raise_to_wake";
+    protected static final String GESTURE_SMART_WAKE_KEY = "gesture_smart_wake";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
 
     protected static void startService(Context context) {
@@ -124,6 +124,10 @@ public final class Utils {
 
     public static boolean areGesturesEnabled(Context context) {
         return isPickUpEnabled(context) || isPocketEnabled(context);
+    }
+
+    protected static boolean isSmartWakeEnabled(Context context) {
+        return isGestureEnabled(context, GESTURE_SMART_WAKE_KEY);
     }
 
     public static boolean sensorsEnabled(Context context) {

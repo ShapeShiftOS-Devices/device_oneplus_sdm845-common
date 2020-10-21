@@ -70,10 +70,20 @@ public class PickupSensor implements SensorEventListener {
     public void onSensorChanged(SensorEvent event) {
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
         boolean isRaiseToWake = Utils.isRaiseToWakeEnabled(mContext);
+        boolean isSmartWake = Utils.isSmartWakeEnabled(mContext);
 
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-        if (delta < (isRaiseToWake ? MIN_WAKEUP_INTERVAL_MS : MIN_PULSE_INTERVAL_MS)) {
-            return;
+
+        if (!isSmartWake) {
+            if (isRaiseToWake) {
+                if (delta < MIN_WAKEUP_INTERVAL_MS) {
+                    return;
+                } else {
+                    if (delta < MIN_PULSE_INTERVAL_MS) {
+                        return;
+                    }
+                }
+            }
         }
 
         mEntryTimestamp = SystemClock.elapsedRealtime();
@@ -84,7 +94,7 @@ public class PickupSensor implements SensorEventListener {
 
         if (event.values[0] == 1 && !mInsidePocket) {
 
-           if (isRaiseToWake) {
+           if (isRaiseToWake || isSmartWake) {
                 mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
                 mPowerManager.wakeUp(SystemClock.uptimeMillis(),
                     PowerManager.WAKE_REASON_GESTURE, TAG);

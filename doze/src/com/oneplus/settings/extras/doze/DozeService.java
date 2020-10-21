@@ -31,12 +31,14 @@ public class DozeService extends Service {
 
     private PickupSensor mPickupSensor;
     private PocketSensor mPocketSensor;
+    private SmartSensor mSmartSensor;
 
     @Override
     public void onCreate() {
         if (DEBUG) Log.d(TAG, "Creating service");
         mPickupSensor = new PickupSensor(this);
         mPocketSensor = new PocketSensor(this);
+        mSmartSensor = new SmartSensor(this);
 
         IntentFilter screenStateFilter = new IntentFilter();
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
@@ -57,6 +59,7 @@ public class DozeService extends Service {
         this.unregisterReceiver(mScreenStateReceiver);
         mPickupSensor.disable();
         mPocketSensor.disable();
+        mSmartSensor.disable();
     }
 
     @Override
@@ -70,6 +73,9 @@ public class DozeService extends Service {
                 Utils.isRaiseToWakeEnabled(this)) {
             mPickupSensor.disable();
         }
+        if (Utils.isSmartWakeEnabled(this)) {
+            mSmartSensor.disable();
+        }
         if (Utils.isPocketEnabled(this)) {
             mPocketSensor.disable();
         }
@@ -80,6 +86,9 @@ public class DozeService extends Service {
         if (Utils.isPickUpEnabled(this) ||
                 Utils.isRaiseToWakeEnabled(this)) {
             mPickupSensor.enable();
+        }
+        if (Utils.isSmartWakeEnabled(this) && Utils.isPickUpEnabled(this)) {
+            mSmartSensor.enable();
         }
         if (Utils.isPocketEnabled(this)) {
             mPocketSensor.enable();
