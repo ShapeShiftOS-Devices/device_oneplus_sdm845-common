@@ -15,8 +15,7 @@
 #
 
 # Inherit some common Custom stuff.
-$(call inherit-product, vendor/ssos/config/common.mk)
-$(call inherit-product, vendor/ssos/config/gsm.mk)
+$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 
 # Branding and face unlock
 SSOS_BUILD_TYPE := OFFICIAL
