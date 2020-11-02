@@ -72,6 +72,9 @@ ro.vendor.qti.va_aosp.support=1
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=true
 
+# Freezer setup
+persist.device_config.use_cgroup_freezer=true
+
 # QTI Bluetooth
 ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=cherokee
