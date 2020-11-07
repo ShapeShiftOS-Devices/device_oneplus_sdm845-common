@@ -90,6 +90,9 @@ persist.radio.data_con_rprt=1
 persist.vendor.qti.inputopts.enable=true 
 persist.vendor.qti.inputopts.movetouchslop=0.6
 
+# Disable OEM unlocking in dev options
+ro.oem_unlock_supported=0
+
 # Netmgr
 persist.vendor.data.iwlan.enable=true 
 persist.vendor.data.mode=concurrent
