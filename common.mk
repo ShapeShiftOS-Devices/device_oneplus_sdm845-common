@@ -90,6 +90,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    GoogleCamera \
     libcvface_api \
     Snap
 
