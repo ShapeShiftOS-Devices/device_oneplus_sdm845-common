@@ -21,3 +21,6 @@ allow hal_fod_sdm845 hal_fingerprint_hwservice:hwservice_manager find;
 
 # Allow hal_fod_sdm845 to read and write to sysfs_fod
 allow hal_fod_sdm845 sysfs_fod:file rw_file_perms;
+
+# hwservice context
+add_hwservice(hal_fod_sdm845, hal_fingerprint_hwservice)
