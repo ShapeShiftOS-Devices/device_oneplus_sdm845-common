@@ -390,6 +390,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# OnePlus
+PRODUCT_PACKAGES += \
+    oneplus-fwk.oneplus_sdm845
+
+PRODUCT_BOOT_JARS += \
+    oneplus-fwk.oneplus_sdm845
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.op6-libperfmgr \
