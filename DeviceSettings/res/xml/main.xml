@@ -31,8 +31,8 @@
             android:summary="@string/panel_category_summary"
             android:persistent="false" >
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.potato.device.DeviceSettings"
-                    android:targetClass="com.potato.device.DeviceSettings.PanelSettingsActivity" />
+                    android:targetPackage="org.lineageos.device.DeviceSettings"
+                    android:targetClass="org.lineageos.device.DeviceSettings.PanelSettingsActivity" />
         </Preference>
     </PreferenceCategory>
 
@@ -67,17 +67,17 @@
 
     <PreferenceCategory
         android:title="@string/category_vibrator">
-        <com.potato.device.DeviceSettings.VibratorStrengthPreference
+        <org.lineageos.device.DeviceSettings.VibratorStrengthPreference
             android:key="vib_strength"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
 
-        <com.potato.device.DeviceSettings.VibratorCallStrengthPreference
+        <org.lineageos.device.DeviceSettings.VibratorCallStrengthPreference
             android:key="vib_call_strength"
             android:title="@string/vib_call_strength_title_head"
             android:summary="@string/vib_call_strength_summary_head" />
 
-        <com.potato.device.DeviceSettings.VibratorNotifStrengthPreference
+        <org.lineageos.device.DeviceSettings.VibratorNotifStrengthPreference
             android:key="vib_notif_strength"
             android:title="@string/vib_notif_strength_title_head"
             android:summary="@string/vib_notif_strength_summary_head" />

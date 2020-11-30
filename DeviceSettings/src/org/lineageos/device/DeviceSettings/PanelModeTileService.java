@@ -15,21 +15,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.potato.device.DeviceSettings;
+package org.lineageos.device.DeviceSettings;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
-import androidx.preference.PreferenceManager;
-
-import com.potato.device.DeviceSettings.DeviceSettings;
 
 @TargetApi(24)
-public class DCModeTileService extends TileService {
-    private boolean enabled = false;
-
+public class PanelModeTileService extends TileService {
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -48,11 +41,6 @@ public class DCModeTileService extends TileService {
     @Override
     public void onStartListening() {
         super.onStartListening();
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        enabled = DCModeSwitch.isCurrentlyEnabled(this);
-        getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        getQsTile().updateTile();
-
     }
 
     @Override
@@ -63,12 +51,8 @@ public class DCModeTileService extends TileService {
     @Override
     public void onClick() {
         super.onClick();
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        enabled = DCModeSwitch.isCurrentlyEnabled(this);
-        Utils.writeValue(DCModeSwitch.getFile(), enabled ? "0" : "1");
-        sharedPrefs.edit().putBoolean(DeviceSettings.KEY_DC_SWITCH, enabled ? false : true).commit();
-        //getQsTile().setLabel(enabled ? "DC off" : "DC On");
-        getQsTile().setState(enabled ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE);
-        getQsTile().updateTile();
+        Intent panelModes = new Intent(this, PanelSettingsActivity.class);
+        panelModes.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivityAndCollapse(panelModes);
     }
 }

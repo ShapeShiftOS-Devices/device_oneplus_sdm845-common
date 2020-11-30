@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.potato.device.DeviceSettings;
+package org.lineageos.device.DeviceSettings;
 
 import android.Manifest;
 import android.app.NotificationManager;
@@ -45,7 +45,7 @@ import android.view.KeyEvent;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 
-import com.potato.device.DeviceSettings.Constants;
+import org.lineageos.device.DeviceSettings.Constants;
 
 public class KeyHandler implements DeviceKeyHandler {
 

@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.potato.device.DeviceSettings;
+package org.lineageos.device.DeviceSettings;
 
 import android.app.Activity;
 import android.app.AlertDialog;
