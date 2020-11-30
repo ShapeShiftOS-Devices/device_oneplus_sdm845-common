@@ -98,6 +98,9 @@ PRODUCT_PACKAGES += \
     libqti-perfd-client \
     libcvface_api
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/com.google.android.GoogleCamera.Urnyx.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.google.android.GoogleCamera.Urnyx.xml
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
