@@ -104,6 +104,9 @@
             </intent-filter>
         </service>
 
+        <service android:name="org.lineageos.device.DeviceSettings.HBMModeService"
+            android:exported="false" />
+
         <!-- Search Provider -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
