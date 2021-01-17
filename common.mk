@@ -223,3 +223,7 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
+
+# ShapeShift specific properties
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.ssos.cpu=SDM845
