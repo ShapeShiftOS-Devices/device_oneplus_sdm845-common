@@ -77,6 +77,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
+TARGET_USE_QTI_BT_STACK := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
