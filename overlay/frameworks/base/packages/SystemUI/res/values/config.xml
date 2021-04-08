@@ -26,4 +26,7 @@
     <!-- Align volume panel to the left side of the screen -->
     <bool name="config_audioPanelOnLeftSide">true</bool>
 
+    <!-- FPSInfoService Fps file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/sde-crtc-0/measured_fps</string>
+
 </resources>
