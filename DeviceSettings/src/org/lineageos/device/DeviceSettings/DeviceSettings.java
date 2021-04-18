@@ -40,6 +40,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
 import com.android.internal.util.ssos.FileUtils;
+import org.lineageos.device.DeviceSettings.kcal.KCalSettingsActivity;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -51,6 +52,8 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_WIDE_SWITCH = "wide";
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
+    public static final String PREF_DEVICE_KCAL = "device_kcal";
+    public static final String CATEGORY_DISPLAY = "display"; 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     private VibratorStrengthPreference mVibratorStrength;
     public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
@@ -63,6 +66,7 @@ public class DeviceSettings extends PreferenceFragment
     private ListPreference mTopKeyPref;
     private ListPreference mMiddleKeyPref;
     private ListPreference mBottomKeyPref;
+    private Preference mKcal;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -93,6 +97,13 @@ public class DeviceSettings extends PreferenceFragment
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
         mHBMModeSwitch.setOnPreferenceChangeListener(this);
+
+        mKcal = findPreference(PREF_DEVICE_KCAL);
+        mKcal.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
+            startActivity(intent);
+            return true;
+        });
 
         mDCModeSwitch = (TwoStatePreference) findPreference(KEY_DC_SWITCH);
         mDCModeSwitch.setEnabled(DCModeSwitch.isSupported());

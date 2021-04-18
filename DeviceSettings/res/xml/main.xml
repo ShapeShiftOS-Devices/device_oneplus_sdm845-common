@@ -26,6 +26,19 @@
                     android:targetClass="org.lineageos.device.DeviceSettings.PanelSettingsActivity" />
         </Preference>
 
+
+        <Preference
+        android:key="device_kcal"
+        android:persistent="false"
+        android:icon="@drawable/ic_kcal"
+        android:title="@string/device_kcal_title"
+        android:summary="@string/kcal_enabled_summary">
+        <intent
+        android:action="android.intent.action.MAIN"
+        android:targetClass="org.lineageos.device.DeviceSettings.kcal.KCalSettingsActivity"
+        android:targetPackage="org.lineageos.device.DeviceSettings.kcal" />
+      </Preference>
+
         <Preference
             android:key="doze"
             android:persistent="false"

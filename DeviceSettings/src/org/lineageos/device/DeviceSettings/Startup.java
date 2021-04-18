@@ -24,6 +24,7 @@ import android.content.SharedPreferences;
 import android.provider.Settings;
 import android.text.TextUtils;
 import androidx.preference.PreferenceManager;
+import org.lineageos.device.DeviceSettings.kcal.KCalSettings;
 
 public class Startup extends BroadcastReceiver {
 
@@ -33,6 +34,7 @@ public class Startup extends BroadcastReceiver {
         VibratorStrengthPreference.restore(context);
         VibratorCallStrengthPreference.restore(context);
         VibratorNotifStrengthPreference.restore(context);
+        KCalSettings.restore(context);
 
         boolean enabled = false;
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);

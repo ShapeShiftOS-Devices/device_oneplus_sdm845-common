@@ -57,4 +57,28 @@
     <style name="Theme.Main.SwitchPreferenceStyle" parent="@style/Theme.Main.PreferenceStyle">
         <item name="widgetLayout">@*android:layout/preference_widget_switch</item>
     </style>
+
+
+    <style name="CustomOptionsTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="preferenceTheme">@style/ShapeShiftPreferenceTheme</item>
+    </style>
+
+    <style name="ShapeShiftPreferenceTheme" parent="@style/PreferenceThemeOverlay.v14.Material">
+        <item name="preferenceCategoryTitleTextAppearance">@style/TextAppearance.CategoryTitle</item>
+    </style>
+
+    <style name="TextAppearance" parent="android:TextAppearance.DeviceDefault"/>
+
+    <style name="TextAppearance.CategoryTitle"
+           parent="@*android:style/TextAppearance.DeviceDefault.Body2">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">11sp</item>
+        <!-- 0.8 Spacing, 0.8/11 = 0.072727273 -->
+        <item name="android:letterSpacing">0.072727273</item>
+    </style>
+
+    <style name="DeviceSettings.SwitchBar" parent="@android:style/ThemeOverlay.Material.ActionBar">
+    </style>
+
 </resources>
