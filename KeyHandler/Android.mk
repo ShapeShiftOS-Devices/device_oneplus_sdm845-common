@@ -21,6 +21,9 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_PACKAGE_NAME := KeyHandler
 
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    vendor.oneplus.hardware.camera-V1.0-java
+
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true

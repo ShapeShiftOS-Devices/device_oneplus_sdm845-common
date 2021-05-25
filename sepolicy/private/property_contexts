@@ -1,2 +1,8 @@
 # Fastbootd
 ro.fastbootd.available    u:object_r:exported_default_prop:s0
+
+# Camera
+camera.opfb.         u:object_r:exported_system_prop:s0
+persist.camera.      u:object_r:exported_system_prop:s0
+persist.opcamera.    u:object_r:exported_system_prop:s0
+ro.camera.           u:object_r:exported_system_prop:s0
