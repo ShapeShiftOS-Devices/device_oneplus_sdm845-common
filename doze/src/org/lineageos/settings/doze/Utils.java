@@ -27,7 +27,7 @@ import android.provider.Settings;
 import android.util.Log;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 
 import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;

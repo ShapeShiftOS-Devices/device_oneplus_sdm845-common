@@ -50,13 +50,13 @@
                     android:targetClass="com.android.touch.gestures.TouchscreenGestureSettings" />
         </Preference>
 
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
             android:key="hbm"
             android:icon="@drawable/ic_hbm_mode_icon"
             android:summary="@string/hbm_mode_summary"
             android:title="@string/hbm_mode_title" />
 
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
             android:key="dc"
             android:icon="@drawable/ic_dc_mode_icon"
             android:summary="@string/dc_mode_summary"
