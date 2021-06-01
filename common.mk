@@ -163,6 +163,11 @@ PRODUCT_PACKAGES += \
     vendor.nxp.nxpese@1.0:64 \
     vendor.nxp.nxpnfc@1.0:64
 
+# Per-device RRO Overlays
+PRODUCT_PACKAGES += \
+    DashFrameworks \
+    WarpFrameworks
+
 # Power
 PRODUCT_PACKAGES += \
     power.qcom:64
