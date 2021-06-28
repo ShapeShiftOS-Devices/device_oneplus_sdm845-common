@@ -3,15 +3,15 @@ sudo rm -rf hardware/lineage/livedisplay
 # Frameworks
 cd frameworks/base
 sudo git fetch https://github.com/ShapeShiftOS/android_frameworks_base android_11-ld
-sudo git cherry-pick 8ec36a4b94ae3fdc010c8bb6818fb586f964a939
+sudo git cherry-pick 5c997251a2938c155422ff6826517f7e2e4d019f
 cd ../..
 # Sepolicy
 cd device/ssos/sepolicy
 sudo git fetch https://github.com/ShapeShiftOS/android_device_ssos_sepolicy mmm
-sudo git cherry-pick a3afe2efd4c5b628ea295c0176ab80f4b7a0f319
+sudo git cherry-pick aaafbd2be8d8cda537bd44a7953838c081172a0f
 cd ../../..
 # Settings
 cd packages/apps/Settings
 sudo git fetch https://github.com/ShapeShiftOS/android_packages_apps_Settings OOF
-sudo git cherry-pick bdb7d30e137bf3b1b435b96a3fca5af825f4a564
+sudo git cherry-pick 9fc128a4d705128943ea321cebdd5a48e041dd8f
 cd ../../..
