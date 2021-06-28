@@ -192,7 +192,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOARD_PLATFORM := sdm845
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    device/oneplus/sdm845-common/interfaces
 
 # Telephony
 PRODUCT_PACKAGES += \
