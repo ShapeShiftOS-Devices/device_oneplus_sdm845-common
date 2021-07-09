@@ -90,12 +90,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    GoogleCamera \
     libqti-perfd-client \
     libcvface_api
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/com.google.android.GoogleCamera.Urnyx.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.google.android.GoogleCamera.Urnyx.xml
 
 # Component overrides
 PRODUCT_COPY_FILES += \
