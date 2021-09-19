@@ -121,4 +121,10 @@
          1: Right side -->  
     <integer name="config_alertSliderLocation">1</integer>
 
+    <!-- Pocket Lock -->
+    <bool name="config_pocketModeSupported">true</bool>
+
+    <!-- Defines custom Vendor sensor for pocket detection. -->
+    <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
+
 </resources>
