@@ -28,7 +28,7 @@ $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-ssos
 
 PRODUCT_PACKAGES += \
     OdmOverlay-OPSystemUI \
@@ -138,9 +138,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.oneplus_sdm845
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service.oneplus_sdm845
 
 PRODUCT_PACKAGES += \
     libavservices_minijail
@@ -162,10 +159,10 @@ PRODUCT_PACKAGES += \
 
 # OnePlus
 PRODUCT_PACKAGES += \
-    oneplus-fwk
+    oneplus-fwk.oneplus_sdm845
 
 PRODUCT_BOOT_JARS += \
-    oneplus-fwk
+    oneplus-fwk.oneplus_sdm845
 
 # Power
 PRODUCT_PACKAGES += \
@@ -173,8 +170,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/oneplus
+    $(LOCAL_PATH)
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -189,18 +185,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
-# Touch
-PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.oneplus
-
 # tri-state-key
 PRODUCT_PACKAGES += \
     KeyHandler \
     tri-state-key_daemon
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    lineage.trust@1.0-service
 
 # Update engine
 PRODUCT_PACKAGES += \
