@@ -16,6 +16,7 @@
 cc_binary {
     name: "tri-state-key_daemon",
     init_rc: ["tri-state-key_daemon.rc"],
+    system_ext_specific: true,
     srcs: [
         "main.cpp",
         "uevent_listener.cpp",
