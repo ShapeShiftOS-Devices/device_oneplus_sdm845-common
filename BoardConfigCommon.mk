@@ -56,10 +56,6 @@ TARGET_KERNEL_CONFIG := enchilada_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
 TARGET_KERNEL_CLANG_COMPILE := true
 
-# Broken
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-BUILD_BROKEN_DUP_RULES := true
-
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 BUILD_WITHOUT_VENDOR := true
@@ -79,6 +75,9 @@ BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
+
+# Broken
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
@@ -123,6 +122,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
 
+SELINUX_IGNORE_NEVERALLOWS := true
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
