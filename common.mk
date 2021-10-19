@@ -380,10 +380,6 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3 \
     android.hardware.neuralnetworks@1.3.vendor
 
-# OnePlus
-PRODUCT_PACKAGES += \
-    oneplus-fwk
-
 # OnePlus Camera HIDL
 PRODUCT_PACKAGES += \
     libqti-perfd-client
