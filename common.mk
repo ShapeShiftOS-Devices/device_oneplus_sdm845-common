@@ -14,13 +14,12 @@
 # limitations under the License.
 #
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+# Flatten APEXs for performance
+OVERRIDE_TARGET_FLATTEN_APEX := true
 
-# Force disable updating of APEXes when flatten APEX flag is enabled
-ifeq ($(OVERRIDE_TARGET_FLATTEN_APEX),true)
+# This needs to be specified explicitly to override ro.apex.updatable=true from
+# prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
 PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
-endif
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
