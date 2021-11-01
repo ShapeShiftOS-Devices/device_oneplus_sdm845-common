@@ -158,7 +158,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom:64
+    power.qcom
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
