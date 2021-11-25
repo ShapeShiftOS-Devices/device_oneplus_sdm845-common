@@ -496,6 +496,10 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext
 
+# Tracing
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service.pixel
+
 #PRODUCT_BOOT_JARS += \
 #    telephony-ext
 
