@@ -351,15 +351,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.biometrics.fingerprint</name>
-        <transport>hwbinder</transport>
-        <version>2.3</version>
-        <interface>
-            <name>IBiometricsFingerprint</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.oneplus.hardware.display</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
