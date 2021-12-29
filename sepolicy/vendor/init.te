@@ -49,3 +49,5 @@ allow init hal_secure_element_hwservice:hwservice_manager { add find };
 allow init hidl_base_hwservice:hwservice_manager add;
 
 permissive init;
+
+allow init vendor_camera_prop:file { write relabelto };

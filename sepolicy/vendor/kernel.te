@@ -9,3 +9,4 @@ allow kernel debugfs_wlan:dir search;
 allow kernel self:socket create;
 
 allow kernel param_block_device:blk_file rw_file_perms;
+allow kernel vfat:file open;
