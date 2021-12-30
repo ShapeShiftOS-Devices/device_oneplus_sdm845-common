@@ -52,3 +52,9 @@ permissive init;
 
 allow init vendor_camera_prop:file { write relabelto };
 binder_call(init, system_server)
+allow init device_latency:chr_file { open write };
+allow init sysfs_devfreq:file write;
+allow init sysfs_devices_system_cpu:file write;
+allow init sysfs_kgsl:file write;
+allow init proc_touchpanel:file { open write };
+allow init sysfs_kgsl:lnk_file read;

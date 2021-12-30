@@ -1,0 +1,2 @@
+allow shell audioserver_exec:file { execute getattr };
+allow shell auditctl_exec:file { execute getattr };
