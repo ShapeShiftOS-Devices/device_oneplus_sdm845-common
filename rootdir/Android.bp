@@ -46,6 +46,13 @@ prebuilt_etc {
     vendor: true,
 }
 
+prebuilt_etc {
+    name: "init.temp.rc",
+    src: "etc/init.temp.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
 sh_binary {
     name: "init.class_main.sh",
     src: "etc/init.class_main.sh",
