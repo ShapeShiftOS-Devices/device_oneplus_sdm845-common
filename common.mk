@@ -28,7 +28,7 @@ $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-ssos
 
 PRODUCT_PACKAGES += \
     OdmOverlay-OPSystemUI \
@@ -296,7 +296,7 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.oneplus_sdm845
-    
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0 \
@@ -304,14 +304,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1 \
     android.hardware.keymaster@4.1.vendor
 
-# LiveDisplay
-#PRODUCT_PACKAGES += \
-#    lineage.livedisplay@2.0-service.oneplus_sdm845
-
 PRODUCT_PACKAGES += \
     libavservices_minijail
-    
-    
+
 # Media
 PRODUCT_PACKAGES += \
     libxml2 \
@@ -521,17 +516,9 @@ PRODUCT_PACKAGES += \
 #PRODUCT_BOOT_JARS += \
 #    telephony-ext
 
-# Touch
-PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.oneplus
-
 # tri-state-key
 PRODUCT_PACKAGES += \
     KeyHandler
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    lineage.trust@1.0-service
 
 # Update engine
 PRODUCT_PACKAGES += \

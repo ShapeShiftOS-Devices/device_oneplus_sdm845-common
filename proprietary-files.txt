@@ -1225,7 +1225,6 @@ vendor/lib/libwfddisplayconfig_proprietary.so
 vendor/lib64/libwfddisplayconfig_proprietary.so
 -system_ext/priv-app/WfdService/WfdService.apk
 
-
 #missing
 vendor/lib/libgarden.so
 vendor/lib64/libgarden.so
