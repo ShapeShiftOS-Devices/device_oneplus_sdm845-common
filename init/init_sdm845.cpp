@@ -56,33 +56,57 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
 	property_override(vendor_prop, value);
 }
 
-void load_dalvikvm_properties()
+void ram_6gb() {
+    // 6GB RAM
+    property_override_dual("dalvik.vm.heapstartsize", "dalvik.vm.heapstartsize", "16m");
+    property_override_dual("dalvik.vm.heaptargetutilization", "dalvik.vm.heaptargetutilization", "0.5");
+    property_override_dual("dalvik.vm.heapmaxfree", "dalvik.vm.heapmaxfree", "32m");
+    property_override_dual("dalvik.vm.heapgrowthlimit", "dalvik.vm.heapgrowthlimit", "256m");
+    property_override_dual("dalvik.vm.heapsize", "dalvik.vm.heapsize", "512m");
+    property_override_dual("dalvik.vm.heapminfree", "dalvik.vm.heapminfree", "8m");
+}
+
+void ram_8gb() {
+    // 8GB RAM
+    property_override_dual("dalvik.vm.heapstartsize", "dalvik.vm.heapstartsize", "24m");
+    property_override_dual("dalvik.vm.heaptargetutilization", "dalvik.vm.heaptargetutilization", "0.46");
+    property_override_dual("dalvik.vm.heapmaxfree", "dalvik.vm.heapmaxfree", "48m");
+    property_override_dual("dalvik.vm.heapgrowthlimit", "dalvik.vm.heapgrowthlimit", "256m");
+    property_override_dual("dalvik.vm.heapsize", "dalvik.vm.heapsize", "512m");
+    property_override_dual("dalvik.vm.heapminfree", "dalvik.vm.heapminfree", "8m");
+}
+
+void ram_10gb() {
+    // 10GB RAM
+    property_override_dual("dalvik.vm.heapstartsize", "dalvik.vm.heapstartsize", "24m");
+    property_override_dual("dalvik.vm.heaptargetutilization", "dalvik.vm.heaptargetutilization", "0.44");
+    property_override_dual("dalvik.vm.heapmaxfree", "dalvik.vm.heapmaxfree", "52m");
+    property_override_dual("dalvik.vm.heapgrowthlimit", "dalvik.vm.heapgrowthlimit", "320m");
+    property_override_dual("dalvik.vm.heapsize", "dalvik.vm.heapsize", "512m");
+    property_override_dual("dalvik.vm.heapminfree", "dalvik.vm.heapminfree", "8m");
+}
+
+void load_ram_size()
 {
-	struct sysinfo sys;
+    struct sysinfo sys;
 
-	sysinfo(&sys);
-	if (sys.totalram < 7000ull * 1024 * 1024)
-	{
-		// 6GB RAM
-		property_override_dual("dalvik.vm.heapstartsize", "dalvik.vm.heapstartsize", "16m");
-		property_override_dual("dalvik.vm.heaptargetutilization", "dalvik.vm.heaptargetutilization", "0.5");
-		property_override_dual("dalvik.vm.heapmaxfree", "dalvik.vm.heapmaxfree", "32m");
-	}
-	else
-	{
-		// 8/10GB RAM
-		property_override_dual("dalvik.vm.heapstartsize", "dalvik.vm.heapstartsize", "24m");
-		property_override_dual("dalvik.vm.heaptargetutilization", "dalvik.vm.heaptargetutilization", "0.46");
-		property_override_dual("dalvik.vm.heapmaxfree", "dalvik.vm.heapmaxfree", "48m");
-	}
-
-	property_override_dual("dalvik.vm.heapgrowthlimit", "dalvik.vm.heapgrowthlimit", "256m");
-	property_override_dual("dalvik.vm.heapsize", "dalvik.vm.heapsize", "512m");
-	property_override_dual("dalvik.vm.heapminfree", "dalvik.vm.heapminfree", "8m");
+    sysinfo(&sys);
+    if (sys.totalram > 9000ull * 1024 * 1024)
+    {
+            ram_10gb();
+    }
+    else if (sys.totalram > 7000ull * 1024 * 1024)
+    {
+            ram_8gb();
+    }
+    else if (sys.totalram > 5000ull * 1024 * 1024)
+    {
+            ram_6gb();
+    }
 }
 
 void vendor_load_properties()
 {
-	// Load dalvik config
-	load_dalvikvm_properties();
+    // Load RAM configs
+    load_ram_size();
 }
