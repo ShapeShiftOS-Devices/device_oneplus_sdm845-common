@@ -25,3 +25,5 @@ type public_adsprpcd_file, file_type;
 
 type sysfs_irq, fs_type, sysfs_type;
 type proc_irq, fs_type, proc_type;
+type sysfs_fod, sysfs_type, fs_type;
+type sysfs_aod, sysfs_type, fs_type;

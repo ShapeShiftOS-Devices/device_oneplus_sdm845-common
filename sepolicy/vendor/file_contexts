@@ -4,7 +4,6 @@
 /data/vendor/oemnvitems/4678_0    u:object_r:wifi_nv_data_file:s0
 /data/vendor/oemnvitems/4678_1    u:object_r:wifi_nv_data_file:s0
 
-
 # Devices
 /dev/block/platform/soc/1d84000\.ufshc/by-name/config         u:object_r:frp_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/oem_dycnvbk    u:object_r:oem_block_device:s0
@@ -37,13 +36,11 @@
 
 # Custom HALs
 /vendor/bin/hw/lineage\.livedisplay@2\.1-service\.oneplus_sdm845                                 u:object_r:hal_livedisplay_sdm845_exec:s0
-/vendor/bin/hw/android\.hardware\.power-service\.op6-libperfmgr                                  u:object_r:hal_power_default_exec:s0
-/vendor/bin/hw/android\.hardware\.power\.stats@1\.0-service\.op6                                 u:object_r:hal_power_stats_default_exec:s0
 /vendor/bin/hw/android\.hardware\.atrace@1.0-service\.pixel                                      u:object_r:hal_atrace_default_exec:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.oneplus_sdm845                 u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.oneplus           u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.oneplus_fajita           u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                         u:object_r:hal_dms_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.camera@1\.0-service                    u:object_r:hal_cameraHIDL_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.CameraMDMHIDL@1\.0-service             u:object_r:hal_cameraHIDL_default_exec:s0
@@ -62,9 +59,6 @@
 /(vendor|system/vendor)/bin/dashd                   u:object_r:dashd_exec:s0
 /(vendor|system/vendor)/bin/opf-service             u:object_r:opf_exec:s0
 /(vendor|system/vendor)/bin/mutualex                                                  u:object_r:vendor_mutualex_exec:s0
-
-# Oneshot IRQ rebalancer
-/vendor/bin/rebalance_interrupts-op6           u:object_r:rebalance_interrupts_vendor_exec:s0
 
 # tri-state-key
 /(vendor|system/vendor)/bin/tri-state-key_daemon          u:object_r:tri-state-key_daemon_exec:s0
