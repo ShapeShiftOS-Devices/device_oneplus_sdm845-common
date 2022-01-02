@@ -52,10 +52,18 @@
             android:name=".ButtonSettingsActivity"
             android:label="@string/button_panel_title"
             android:exported="true">
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="1" />
             <intent-filter>
-                <action android:name="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_parts_device" />
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.system" />
         </activity>
 
         <service
