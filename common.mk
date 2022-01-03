@@ -391,11 +391,7 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # OnePlus
-PRODUCT_PACKAGES += \
-    oneplus-fwk.oneplus_sdm845
-
-PRODUCT_BOOT_JARS += \
-    oneplus-fwk.oneplus_sdm845
+include device/oneplus/extras/fwk.mk
 
 # Power
 PRODUCT_PACKAGES += \
