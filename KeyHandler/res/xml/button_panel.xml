@@ -3,7 +3,9 @@
     Copyright (C) 2021 The LineageOS Project
     SPDX-License-Identifier: Apache-2.0
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/button_panel_title">
     <PreferenceCategory
         android:title="@string/alert_slider_category_title">
 

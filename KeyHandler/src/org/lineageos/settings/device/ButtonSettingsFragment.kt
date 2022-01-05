@@ -25,7 +25,6 @@ class ButtonSettingsFragment : PreferenceFragment(), Preference.OnPreferenceChan
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         addPreferencesFromResource(R.xml.button_panel)
-        activity.actionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val resolver: ContentResolver = getContext().getContentResolver()
 
@@ -56,16 +55,6 @@ class ButtonSettingsFragment : PreferenceFragment(), Preference.OnPreferenceChan
             it.setChecked(value)
             it.setOnPreferenceChangeListener(this)
         }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.home -> {
-                activity.finish()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
