@@ -1,8 +1,9 @@
 on init
-
-    # create an uclamp group for camera-specific processes
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 0
+    mkdir /dev/cpuset/little
+    copy /dev/cpuset/cpus /dev/cpuset/little/cpus
+    copy /dev/cpuset/mems /dev/cpuset/little/mems
+    chown system system /dev/cpuset/little/tasks
+    chmod 0664 /dev/cpuset/little/tasks
 
     # BPF Just In Time compiler
     write /proc/sys/net/core/bpf_jit_enable 1
@@ -157,12 +158,6 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/kernel/sched_rt_runtime_us 1000000
     write /proc/sys/kernel/sched_rr_timeslice_ms 1
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
-
-    # Setup runtime uclamp
-    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground/cpu.uclamp.min 0
-    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/top-app/cpu.uclamp.min 10
 
     # Gain earpiece
     write /sys/kernel/sound_control/earpiece_gain 18

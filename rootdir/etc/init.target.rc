@@ -46,9 +46,7 @@ on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
     chown system system /dev/dash
-    chown system system /dev/cpuctl/top-app/cpu.uclamp.min
     chmod 0664 /dev/dash
-    chmod 0664 /dev/cpuctl/top-app/cpu.uclamp.min
 
 # Add a cpuset for the camera daemon
 # We want all cores for camera
