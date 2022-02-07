@@ -154,9 +154,10 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libcvface_api \
-    Snap \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
+
+TARGET_BUILD_GRAPHENEOS_CAMERA = true
 
 # Codec2
 PRODUCT_PACKAGES += \
