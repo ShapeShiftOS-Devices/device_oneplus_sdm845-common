@@ -153,7 +153,7 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 #Android Auto
--product/priv-app/AndroidAutoStub/AndroidAutoStub.apk;PRESIGNED
+-product/priv-app/AndroidAutoStub/AndroidAutoStub.apk;PRESIGNED|d842fcc44026231d0cb570608b600c0a88b5834f
 
 # ANT+
 system_ext/lib/com.qualcomm.qti.ant@1.0.so
@@ -869,7 +869,7 @@ vendor/lib64/libgcs.so
 # Keystore
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
-vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
+vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc|c8999fb1bccbef81e6b362059e9a6ebd023de98f
 vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libkeymasterprovision.so
@@ -935,14 +935,14 @@ vendor/lib64/unnhal-acc-hvx.so
 
 # NFC
 lib64/vendor.nxp.nxpnfc@1.0.so
--system_ext/app/NxpNfcNci/NxpNfcNci.apk
+-system_ext/app/NxpNfcNci/NxpNfcNci.apk|7171cb557826d30cc4e377c175a7ed3a5a353156
 -system_ext/app/NxpSecureElement/NxpSecureElement.apk
 etc/nfcee_access.xml
 system_ext/etc/permissions/com.nxp.nfc.xml
 vendor/etc/permissions/com.nxp.mifare.xml
 system_ext/framework/com.nxp.nfc.jar
 system_ext/lib64/libnxpnfc-nci.so
-system_ext/lib64/libnxpnfc_nci_jni.so
+system_ext/lib64/libnxpnfc_nci_jni.so|90d049daebed443e05e075785f42b1feaf222458
 vendor/bin/hw/android.hardware.nfc@1.2-service
 vendor/etc/init/android.hardware.nfc@1.2-service.rc
 vendor/lib/ese_client.so
@@ -958,8 +958,8 @@ vendor/lib64/vendor.nxp.nxpese@1.0.so
 vendor/lib64/vendor.nxp.nxpnfc@1.0.so
 
 # Secure Element from OnePlus 7 RKQ1.201022.002
-vendor/bin/hw/android.hardware.secure_element@1.0-service
-vendor/etc/init/android.hardware.secure_element@1.0-service.rc
+vendor/bin/hw/android.hardware.secure_element@1.0-service|6598a81a38d95fc890c2404c4ecf6d4d7130ac12
+vendor/etc/init/android.hardware.secure_element@1.0-service.rc|2c0a6b7c5e358382930e4a58a66ee10771412806
 
 # NFC Configs
 vendor/etc/libese-nxp.conf
