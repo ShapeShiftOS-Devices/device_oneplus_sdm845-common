@@ -11,6 +11,14 @@ ro.bluetooth.library_name=libbluetooth_qti.so
 # BPF
 ro.kernel.ebpf.supported=true
 
+# Camera
+debug.stagefright.ccodec=1
+persist.camera.assert.panic=true
+persist.vendor.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
+ro.opcamera.support=true
+vendor.camera.aux.packagelist=com.oneplus.camera,com.oneplus.camera.service,org.codeaurora.snapcam
+persist.vendor.camera.sceneclassify.enable=0
+
 # Charger
 ro.charger.disable_init_blank=true
 

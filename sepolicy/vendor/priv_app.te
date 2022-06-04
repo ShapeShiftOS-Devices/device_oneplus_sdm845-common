@@ -1,0 +1,2 @@
+allow priv_app sysfs_battery_supply:file read;
+allow priv_app default_android_service:service_manager find;
