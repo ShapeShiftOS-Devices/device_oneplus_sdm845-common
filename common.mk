@@ -201,6 +201,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
+# Device handlers
+PRODUCT_PACKAGES += \
+    KeyHandler \
+    CameraHandler
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
@@ -405,10 +410,6 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti
-
-# tri-state-key
-PRODUCT_PACKAGES += \
-    KeyHandler
 
 # Update engine
 PRODUCT_PACKAGES += \
