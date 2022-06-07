@@ -383,7 +383,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/oneplus \
-    vendor/qcom/opensource/usb/etc
+    vendor/qcom/opensource/usb/etc \
+    vendor/qcom/opensource/commonsys-intf/display \
+    vendor/qcom/opensource/display
 
 # Telephony
 PRODUCT_PACKAGES += \
