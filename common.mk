@@ -184,6 +184,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
+    init.displaycolor.oneplus.rc \
     init.oem.rc \
     init.oneplus.camera.rc \
     init.qcom.class_core.sh \
