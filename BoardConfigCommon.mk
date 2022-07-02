@@ -58,6 +58,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CONFIG := enchilada_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
 TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := dora
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/dora-clang
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
