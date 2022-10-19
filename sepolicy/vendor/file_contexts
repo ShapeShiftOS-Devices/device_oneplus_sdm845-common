@@ -46,3 +46,4 @@
 
 # Sys files
 /sys/project_info(/.*)?    u:object_r:sysfs_project_info:s0
+/sys/bus/platform/devices/1d84000.ufshc/clkscale_enable      u:object_r:sysfs_scsi_host:s0
